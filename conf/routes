@@ -5,6 +5,12 @@
 # Home page
 GET     /                                       BaseController.index
 
+# CRUD
+POST    /{controller}                           {controller}.add
+GET     /{controller}                           {controller}.list
+GET     /{controller}/{id}                      {controller}.get
+DELETE  /{controller}/{id}                      {controller}.delete
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
@@ -16,3 +22,5 @@ GET     /public/                                staticDir:public
 *       /{controller}/{action}                  {controller}.{action}
 *       /{controller}/                          {controller}.index
 *       /{controller}                           {controller}.index
+
+
