@@ -1,0 +1,27 @@
+<a class="btn btn-primary btn-block" href="#users/form">New User</a>
+<!-- /.panel-heading -->
+<div class="panel-body">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th width="1%">#</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="user in users">
+                <td>{{user.id}}</td>
+                <td><a href="#users/detail/{{user.id}}">{{user.name}}</a></td>
+                <td>
+                    <button class="btn btn-danger" ng-click="removeUser(user);" type="button" class="btn btn-default" aria-label="Delete">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- /.table-responsive -->
+</div>
