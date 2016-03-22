@@ -1,1 +1,1 @@
-angular.module("appModule",['ngResource','ngRoute']);
+angular.module("appModule",['ngResource','ngRoute','ngLoadingSpinner']);

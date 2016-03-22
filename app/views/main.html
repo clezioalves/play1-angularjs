@@ -12,12 +12,14 @@
     </head>
     <body>
         <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/angular-1.4.7/angular.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/angular-1.4.7/angular-route.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/angular-1.4.7/angular.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/angular-1.4.7/angular-route.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/app/modules/app.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/app/config/routeConfig.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/angular-1.4.7/angular-resource.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-
+        <script src="@{'/public/javascripts/spin.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/angular-loading/angular-spinner.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/angular-loading/angular-loading-spinner.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/app/services/usersService.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/app/controllers/userListCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/app/controllers/userFormCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
@@ -25,8 +27,8 @@
 
 
         #{get 'moreScripts' /}
-
         <div class="container-fluid">
+            <span us-spinner="{radius:30, width:8, length: 16}"></span>
             <div class="row-fluid">
                 <!--Body content-->
                 <!--#{doLayout /}-->
