@@ -1,7 +1,7 @@
 <a class="btn btn-primary btn-block" href="#users">List User</a>
 
 <fieldset>
-    <legend><i class="fa fa-cloud-download"></i> Add User </legend>
+    <legend><i class="fa fa-cloud-download"></i> {{nameOperation}} User </legend>
 </fieldset>
 
 <div class="row">
@@ -11,7 +11,7 @@
             <label>Name</label>
             <input type="text" class="form-control" ng-model="user.name" placeholder="Name">
         </div>
-        <button class="btn btn-primary" ng-click="addUser(user)">Save</button>
+        <button class="btn btn-primary" ng-click="saveUser(user)">Save</button>
     </form>
 
 </div>

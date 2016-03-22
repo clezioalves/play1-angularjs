@@ -18,6 +18,14 @@ public class Users extends BaseController{
         renderJSON(user);
     }
 
+    public static void edit(){
+        User userDTO = new GsonBuilder().create().fromJson(request.params.get("body"), User.class);
+        User user = User.findById(userDTO.getId());
+        user.setName(userDTO.getName());
+        user.save();
+        renderJSON(user);
+    }
+
     public static void list(){
         List<User> users = User.findAll();
         renderJSON(users);

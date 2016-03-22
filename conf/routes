@@ -7,6 +7,7 @@ GET     /                                       BaseController.index
 
 # CRUD
 POST    /{controller}                           {controller}.add
+PUT     /{controller}                           {controller}.edit
 GET     /{controller}                           {controller}.list
 GET     /{controller}/{id}                      {controller}.get
 DELETE  /{controller}/{id}                      {controller}.delete
