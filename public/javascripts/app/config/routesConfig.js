@@ -6,12 +6,7 @@ angular.module("appModule").config(function($routeProvider, $httpProvider){
 
     $routeProvider.when("/users",{
         templateUrl: '/public/views-angular/users/userList.html',
-        controller: "userListCtrl",
-        resolve: {
-            users: function(UserService){
-                return UserService.query();
-            }
-        }
+        controller: "userListCtrl"
     });
 
     $routeProvider.when("/users/form",{

@@ -2,6 +2,7 @@ package controllers;
 
 import com.google.gson.GsonBuilder;
 import models.User;
+import play.mvc.Http;
 
 import java.util.List;
 
@@ -33,12 +34,18 @@ public class Users extends BaseController{
 
     public static void delete(Long id){
         User user = User.findById(id);
+        if(user == null){
+            error(HTTP_UNPROCESSABLE_ENTITY, "Invalid user");
+        }
         user.delete();
         renderJSON(user);
     }
 
     public static void get(Long id){
         User user = User.findById(id);
+        if(user == null){
+            error(HTTP_UNPROCESSABLE_ENTITY, "Invalid user");
+        }
         renderJSON(user);
     }
 }
