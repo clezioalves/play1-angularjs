@@ -26,14 +26,14 @@ public class BaseController extends Controller {
     public static final String MY_FAVORITE_LANGUAGE = "myFavoriteLanguage";
 
     public static void language(String language) {
-        Cache.set("myFavoriteLanguage",language,"720h");
+        Cache.set(MY_FAVORITE_LANGUAGE,language,"720h");
         response.setCookie(MY_FAVORITE_LANGUAGE, language, "30d");
         renderText(language);
     }
 
     @Before
     public static void beforeFilter() {
-        String myFavoriteLanguage = (String) Cache.get("myFavoriteLanguage");
+        String myFavoriteLanguage = (String) Cache.get(MY_FAVORITE_LANGUAGE);
         if(myFavoriteLanguage == null){
             myFavoriteLanguage = "en";
             Cache.set(MY_FAVORITE_LANGUAGE, myFavoriteLanguage,"720h");
@@ -64,7 +64,7 @@ public class BaseController extends Controller {
     }
 
     protected static String getMessage(Object key, Object... args) {
-        String myFavoriteLanguage = (String) Cache.get("myFavoriteLanguage");
+        String myFavoriteLanguage = (String) Cache.get(MY_FAVORITE_LANGUAGE);
         return Messages.getMessage(myFavoriteLanguage, key, args);
     }
 }
