@@ -4,6 +4,7 @@
 
 # Home page
 GET     /                                       BaseController.index
+GET     /language/{language}                    BaseController.language
 
 # CRUD
 POST    /{controller}                           {controller}.add

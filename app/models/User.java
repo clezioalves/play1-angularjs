@@ -1,5 +1,9 @@
 package models;
 
+import play.data.validation.Max;
+import play.data.validation.Min;
+import play.data.validation.Required;
+
 import javax.persistence.Entity;
 
 /**
@@ -8,6 +12,7 @@ import javax.persistence.Entity;
 @Entity(name = "users")
 public class User extends BaseModel {
 
+    @Required()
     private String name;
 
     public User() {}

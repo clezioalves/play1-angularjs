@@ -1,2 +1,19 @@
-<div class = "alert alert alert-success" ng-show="success">{{success}}</div>
-<div class = "alert alert-danger" ng-show="error">{{error}}</div>
+<div class="alert "
+     ng-class="flash.isInfo ? 'alert-success' : 'alert-danger'"
+     ng-show="flash.getMessages()">
+    <ul>
+        <li>{{flash.getMessages()}}</li>
+    </ul>
+</div>
+
+<div class="alert alert-success" ng-show="successes">
+    <ul ng-repeat="message in successes">
+        <li>{{message}}</li>
+    </ul>
+</div>
+
+<div class="alert alert-danger" ng-show="errors">
+    <ul ng-repeat="message in errors">
+        <li>{{message}}</li>
+    </ul>
+</div>

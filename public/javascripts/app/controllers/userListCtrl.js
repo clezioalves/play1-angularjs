@@ -1,26 +1,23 @@
-angular.module("appModule").controller("userListCtrl",function($scope, UserService, $timeout){
-
+angular.module("appModule").controller("userListCtrl",function($scope, UserService, $controller, translateService){
+    angular.extend(this, $controller('mainCtrl', {$scope: $scope}));
     UserService.query(
         function(users) {
             $scope.users = users;
-            $scope.success = "Listado com sucesso";
-            $timeout(function(){$scope.success = ""},4000);
         },
         function(response) {
-            $scope.error = response.data;
+            $scope.showMessageError(response.data);
         }
     );
 
     //Remove User
     $scope.removeUser = function(user){
-        if(confirm("Deseja excluir "+user.name+"?")){
+        if(confirm(translateService.translate('generic.deleteConfirmation', [user.name]))){
             UserService.remove({id: user.id}, function(){
                 $scope.users = UserService.query();
-            },function(error){
-                console.info(error);
-
-                //
+            },function(response){
+                $scope.showMessageError(response.data);
             });
         }
     }
+
 });

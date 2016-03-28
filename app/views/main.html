@@ -11,33 +11,42 @@
         <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
     </head>
     <body>
-        <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/jquery-2.2.2.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/stylesheets/bootstrap-3.3.5-dist/js/bootstrap.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/angular-1.4.7/angular.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/angular-1.4.7/angular-route.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/app/modules/app.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/app/config/routesConfig.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/angular-1.4.7/angular-resource.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/angular-1.4.7/i18n/angular-locale_pt-br.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/angular-1.4.7/angular-cookies.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/spin.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/angular-loading/angular-spinner.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/angular-loading/angular-loading-spinner.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+
+        <script src="@{'/public/javascripts/app/services/flashService.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/app/services/usersService.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/services/translateService.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/controllers/mainCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/app/controllers/userListCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/app/controllers/userAddCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/app/controllers/userEditCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/app/controllers/userDetailCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/filters/translateFilter.js'}" type="text/javascript" charset="${_response_encoding}"></script>
 
 
         #{get 'moreScripts' /}
-        <div class="container-fluid">
+        <div class="container-fluid" ng-controller="mainCtrl">
+            <div style="text-align: right">
+                <img src="@{'/public/images/en.png'}" style="cursor: pointer" ng-show="language != 'en'" alt="English" height="42" width="42" ng-click="setLanguage('en')">
+                <img src="@{'/public/images/pt-br.png'}" style="cursor: pointer" ng-show="language != 'pt-br'" alt="Português" height="42" width="42" ng-click="setLanguage('pt-br')">
+            </div>
+
             <span us-spinner="{radius:30, width:8, length: 16}"></span>
             <div class="row-fluid">
                 <!--Body content-->
                 <!--#{doLayout /}-->
-                <div ng-view>
-
-
-                </div>
+                <div ng-view />
             </div>
         </div>
 

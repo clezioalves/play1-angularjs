@@ -1,17 +1,18 @@
-<a class="btn btn-primary btn-block" href="#users">List User</a>
+<div ng-include src="'/public/views-angular/message.html'"></div>
+<a class="btn btn-primary btn-block" href="#users">{{'users.ListUser' | translate}}</a>
 
 <fieldset>
-    <legend><i class="fa fa-cloud-download"></i> {{nameOperation}} User </legend>
+    <legend><i class="fa fa-cloud-download"></i> {{labelOperation | translate}}</legend>
 </fieldset>
 
 <div class="row">
     <form name="form">
         <input type="hidden" ng-model="user.id" >
         <div class="form-group">
-            <label>Name</label>
-            <input type="text" class="form-control" ng-model="user.name" placeholder="Name">
+            <label>{{'users.Name' | translate}}</label>
+            <input type="text" class="form-control" ng-model="user.name" placeholder="{{'users.Name' | translate}}">
         </div>
-        <button class="btn btn-primary" ng-click="saveUser(user)">Save</button>
+        <button class="btn btn-primary" ng-click="saveUser(user)">{{'generic.Save' | translate}}</button>
     </form>
 
 </div>

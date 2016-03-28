@@ -1,3 +1,15 @@
 # You can specialize this file for each language.
 # For example, for French create a messages.fr file
 #
+#Validation
+validation.min = The field %s is too short.
+validation.max = The field %s is too long.
+validation.required = The field %s is required.
+
+#Entity
+error.noSaved = The information of %s could not be saved. Please, try again.
+entity.invalid = Invalid %s
+models.user = user
+
+#Fields
+user.name = Name
