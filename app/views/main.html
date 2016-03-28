@@ -38,8 +38,8 @@
         #{get 'moreScripts' /}
         <div class="container-fluid" ng-controller="mainCtrl">
             <div style="text-align: right">
-                <img src="@{'/public/images/en.png'}" style="cursor: pointer" ng-show="language != 'en'" alt="English" height="42" width="42" ng-click="setLanguage('en')">
-                <img src="@{'/public/images/pt-br.png'}" style="cursor: pointer" ng-show="language != 'pt-br'" alt="Português" height="42" width="42" ng-click="setLanguage('pt-br')">
+                <img src="@{'/public/images/en.png'}" style="cursor: pointer" ng-show="language != 'en'" title="English" height="42" width="42" ng-click="setLanguage('en')">
+                <img src="@{'/public/images/pt-br.png'}" style="cursor: pointer" ng-show="language != 'pt-br'" title="Português" height="42" width="42" ng-click="setLanguage('pt-br')">
             </div>
 
             <span us-spinner="{radius:30, width:8, length: 16}"></span>
