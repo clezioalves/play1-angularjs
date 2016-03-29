@@ -1,4 +1,4 @@
-angular.module("appModule").controller("mainCtrl",function($scope, $timeout, flash, $http, $cookies, $route, $cookies){
+angular.module("appModule").controller("mainCtrl",function($scope, $timeout, flash, $http, $cookies, $route, $cookies, translateService){
     $scope.flash = flash;
     //Message success
     $scope.showMessageSuccess = function(message){
@@ -31,6 +31,23 @@ angular.module("appModule").controller("mainCtrl",function($scope, $timeout, fla
             $route.reload();
         });
     };
+
+    $scope.confirmPopup = function(message, callback){
+        bootbox.confirm({
+            size: 'small',
+            title: translateService.translate('generic.Attention')+"!",
+            message: message,
+            buttons: {
+                confirm: {
+                  label: translateService.translate('generic.Confirm')
+                },
+                cancel: {
+                  label: translateService.translate('generic.Cancel')
+                }
+            },
+            callback: callback
+        })
+    }
 
     $scope.language = $cookies.get("myFavoriteLanguage");
 });

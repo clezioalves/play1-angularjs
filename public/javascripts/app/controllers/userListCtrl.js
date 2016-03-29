@@ -11,13 +11,16 @@ angular.module("appModule").controller("userListCtrl",function($scope, UserServi
 
     //Remove User
     $scope.removeUser = function(user){
-        if(confirm(translateService.translate('generic.deleteConfirmation', [user.name]))){
-            UserService.remove({id: user.id}, function(){
-                $scope.users = UserService.query();
-            },function(response){
-                $scope.showMessageError(response.data);
-            });
-        }
+        $scope.confirmPopup(translateService.translate('generic.deleteConfirmation', [user.name]),
+            function(confirmed) {
+                if(confirmed){
+                UserService.remove({id: user.id}, function(){
+                    $scope.users = UserService.query();
+                },function(response){
+                    $scope.showMessageError(response.data);
+                });}
+            }
+        );
     }
 
 });
