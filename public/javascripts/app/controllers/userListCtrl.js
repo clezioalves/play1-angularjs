@@ -16,6 +16,7 @@ angular.module("appModule").controller("userListCtrl",function($scope, UserServi
                 if(confirmed){
                 UserService.remove({id: user.id}, function(){
                     $scope.users = UserService.query();
+                    $scope.showMessageSuccess(translateService.translate('generic.deleted'));
                 },function(response){
                     $scope.showMessageError(response.data);
                 });}

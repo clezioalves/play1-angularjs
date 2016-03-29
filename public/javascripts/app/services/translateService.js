@@ -2,7 +2,7 @@ angular.module("appModule").service("translateService", function($cookies) {
     var _translations = {
          "en":{
              "generic.Action":"Actions",
-             "generic.saved":"The data has been saved.",
+             "generic.saved":"Record has been successfully saved!",
              "generic.deleteConfirmation":"Are you sure you want to delete %s?",
              "generic.Save":"Save",
              "generic.Edit":"Edit",
@@ -10,6 +10,7 @@ angular.module("appModule").service("translateService", function($cookies) {
              "generic.Attention":"Attention",
              "generic.Confirm":"Confirm",
              "generic.Cancel":"Cancel",
+             "generic.deleted":"Record has been successfully deleted!",
              "users.name":"Name",
              "users.NewUser":"New User",
              "users.ListUser":"List User",
@@ -18,7 +19,7 @@ angular.module("appModule").service("translateService", function($cookies) {
          },
          "pt-br":{
              "generic.Action":"Ação",
-             "generic.saved":"Os dados foram salvos.",
+             "generic.saved":"O registro foi salvo com sucesso!",
              "generic.deleteConfirmation":"Deseja realmente excluir %s?",
              "generic.Save":"Salvar",
              "generic.Edit":"Editar",
@@ -26,6 +27,7 @@ angular.module("appModule").service("translateService", function($cookies) {
              "generic.Attention":"Atenção",
              "generic.Confirm":"Confirmar",
              "generic.Cancel":"Cancelar",
+             "generic.deleted":"O registro foi excluído com sucesso!",
              "users.name":"Nome",
              "users.NewUser":"Novo Usuário",
              "users.ListUser":"Listar Usuário",

@@ -1,4 +1,4 @@
-angular.module("appModule").factory("flash", function($rootScope, $timeout) {
+angular.module("appModule").factory("flash", function($rootScope, $timeout, genericConfig) {
   var queue = [];
   var currentMessage = "";
   var isInfo = false;
@@ -18,7 +18,7 @@ angular.module("appModule").factory("flash", function($rootScope, $timeout) {
             isInfo = false;
             queue = [];
             currentMessage = "";
-        },2000);
+        }, genericConfig.timeSuccess);
     },
     isInfo: function(){
         return isInfo;

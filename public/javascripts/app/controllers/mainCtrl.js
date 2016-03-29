@@ -1,4 +1,4 @@
-angular.module("appModule").controller("mainCtrl",function($scope, $timeout, flash, $http, $cookies, $route, $cookies, translateService){
+angular.module("appModule").controller("mainCtrl",function($scope, $timeout, flash, $http, $cookies, $route, translateService, genericConfig){
     $scope.flash = flash;
     //Message success
     $scope.showMessageSuccess = function(message){
@@ -8,7 +8,7 @@ angular.module("appModule").controller("mainCtrl",function($scope, $timeout, fla
             $scope.successes = message;
         }
 
-        $timeout(function(){$scope.successes = ""},5000);
+        $timeout(function(){$scope.successes = ""}, genericConfig.timeSuccess);
     };
     //Message error
     $scope.showMessageError = function(message){
@@ -19,7 +19,7 @@ angular.module("appModule").controller("mainCtrl",function($scope, $timeout, fla
             $scope.errors = message;
         }
         console.info($scope.errors);
-        $timeout(function(){$scope.errors = ""},7000);
+        $timeout(function(){$scope.errors = ""}, genericConfig.timeError);
     };
 
     $scope.setLanguage = function(language){
