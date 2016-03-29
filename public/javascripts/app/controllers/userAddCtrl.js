@@ -10,5 +10,6 @@ angular.module("appModule").controller("userAddCtrl",function($scope, UserServic
             }
         );
     };
-    $scope.labelOperation = 'users.NewUser';
+
+    $scope.labelOperation = translateService.translate('generic.New',[translateService.translate('users.User')])
 });

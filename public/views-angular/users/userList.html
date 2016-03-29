@@ -1,5 +1,5 @@
 <div ng-include src="'/public/views-angular/message.html'"></div>
-<a class="btn btn-primary btn-block" href="#users/form">{{'users.NewUser' | translate}}</a>
+<a class="btn btn-primary btn-block" href="#users/form">{{'generic.New' | translate:[('users.User' | translate)]}}</a>
 
 <!-- /.panel-heading -->
 <div class="panel-body">
@@ -8,7 +8,7 @@
             <thead>
             <tr>
                 <th width="1%">#</th>
-                <th>{{'users.name' | translate}}</th>
+                <th>{{'users.Name' | translate}}</th>
                 <th>{{'generic.Action' | translate}}</th>
             </tr>
             </thead>
@@ -18,9 +18,9 @@
                 <td><a href="#users/detail/{{user.id}}">{{user.name}}</a></td>
                 <td>
                     <a class="btn btn-success" href="#users/edit/{{user.id}}">
-                        <span class="glyphicon glyphicon-edit" aria-hidden="true" title="{{'generic.Edit' | translate}}"></span>
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true" title="{{'generic.Edit' | translate:[('users.User' | translate)]}}"></span>
                     </a>
-                    <a class="btn btn-danger" ng-click="removeUser(user);" title="{{'generic.Delete' | translate}}">
+                    <a class="btn btn-danger" ng-click="removeUser(user);" title="{{'generic.Delete' | translate:[('users.User' | translate)]}}">
                         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                     </a>
                 </td>

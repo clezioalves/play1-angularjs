@@ -1,8 +1,8 @@
 <div ng-include src="'/public/views-angular/message.html'"></div>
-<a class="btn btn-primary btn-block" href="#users">{{'users.ListUser' | translate}}</a>
+<a class="btn btn-primary btn-block" href="#users">{{'generic.List' | translate:[('users.User' | translate)]}}</a>
 
 <fieldset>
-    <legend><i class="fa fa-cloud-download"></i> {{labelOperation | translate}}</legend>
+    <legend><i class="fa fa-cloud-download"></i> {{labelOperation}}</legend>
 </fieldset>
 
 <div class="row">

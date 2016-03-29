@@ -11,5 +11,5 @@ angular.module("appModule").controller("userEditCtrl",function($scope, UserServi
             }
         );
     };
-    $scope.labelOperation = 'users.EditUser';
+    $scope.labelOperation = translateService.translate('generic.Edit',[translateService.translate('users.User')])
 });
