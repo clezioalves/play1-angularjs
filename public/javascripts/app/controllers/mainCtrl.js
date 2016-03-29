@@ -18,7 +18,6 @@ angular.module("appModule").controller("mainCtrl",function($scope, $timeout, fla
         }else{
             $scope.errors = message;
         }
-        console.info($scope.errors);
         $timeout(function(){$scope.errors = ""}, genericConfig.timeError);
     };
 

@@ -6,7 +6,6 @@ angular.module("appModule").controller("userAddCtrl",function($scope, UserServic
                 $location.path("/users");
             },
             function(response) {
-                console.info(response.data);
                 $scope.showMessageError(response.data);
             }
         );
