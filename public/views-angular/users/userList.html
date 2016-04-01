@@ -27,6 +27,32 @@
             </tr>
             </tbody>
         </table>
+
+        <div class="text-center">
+            <ul class="pagination" ng-if="1 < totalPages">
+
+                <li ng-class="{ disabled : currentPage == 1 }">
+                    <a href="">&laquo;</a>
+                </li>
+
+                <li ng-class="{ disabled : currentPage == 1 }">
+                    <a href="">&lsaquo;</a>
+                </li>
+
+                <li ng-repeat="pageNumber in trackerPage() track by $index" ng-class="{ active : currentPage == pageNumber, disabled : pageNumber == '...' }">
+                    <a href="">{{ pageNumber }}</a>
+                </li>
+
+                <li ng-class="{ disabled : !hasNextPage }">
+                    <a href="">&rsaquo;</a>
+                </li>
+
+                <li ng-class="{ disabled : !hasNextPage }">
+                    <a href="" ng-click="setCurrent(pagination.last)">&raquo;</a>
+                </li>
+
+            </ul>
+        </div>
     </div>
     <!-- /.table-responsive -->
 </div>

@@ -2,9 +2,9 @@ package controllers;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import models.PaginatedDTO;
 import models.User;
-
-import java.util.List;
+import play.modules.paginate.ModelPaginator;
 
 /**
  * Created by clezio on 18/03/16.
@@ -39,7 +39,9 @@ public class Users extends BaseController{
      }
 
     public static void list(){
-        List<User> users = User.findAll();
+        ModelPaginator paginator = new ModelPaginator(User.class);
+        paginator.setPageSize(10);
+        PaginatedDTO users = new PaginatedDTO(paginator);
         renderJSON(users);
     }
 
