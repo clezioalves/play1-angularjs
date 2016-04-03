@@ -1,23 +1,26 @@
 angular.module("appModule").controller("userListCtrl",function($scope, UserService, $controller, translateService){
     angular.extend(this, $controller('mainCtrl', {$scope: $scope}));
-    UserService.query(
-        function(data) {
-            $scope.users = data.list;
-            $scope.hasNextPage = data.hasNextPage;
-            $scope.totalPages = data.totalPages;
-            $scope.currentPage = data.currentPage;
-        },
-        function(response) {
-            $scope.showMessageError(response.data);
-        }
-    );
+
+    $scope.listUser = function(){
+        UserService.query(
+            function(data) {
+                $scope.users = data.list;
+                $scope.hasNextPage = data.hasNextPage;
+                $scope.pageCount = data.pageCount;
+                $scope.currentPage = data.currentPage;
+            },
+            function(response) {
+                $scope.showMessageError(response.data);
+            }
+        );
+    };
 
     $scope.trackerPage = function(){
         var array = [];
-        console.info("totalPages: "+$scope.totalPages);
+        console.info("pageCount: "+$scope.pageCount);
         console.info("currentPage: "+$scope.currentPage);
 
-        var numTracker = 3;
+        var numTracker = 5;
 
         if($scope.currentPage > numTracker){
             array.push('...');
@@ -25,14 +28,14 @@ angular.module("appModule").controller("userListCtrl",function($scope, UserServi
 
         var start = $scope.currentPage - numTracker + 1;
 
-        while(start < $scope.currentPage + numTracker){
+        while(start < ($scope.currentPage + numTracker) && start <= $scope.pageCount){
             if(start > 0){
                 array.push(start);
             }
             start++;
         }
 
-        if(($scope.currentPage + numTracker) < $scope.totalPages){
+        if(($scope.currentPage + numTracker) < $scope.pageCount){
             array.push('...');
         }
         return array;
@@ -44,7 +47,7 @@ angular.module("appModule").controller("userListCtrl",function($scope, UserServi
             function(confirmed) {
                 if(confirmed){
                 UserService.remove({id: user.id}, function(){
-                    $scope.users = UserService.query();
+                    $scope.listUser();
                     $scope.showMessageSuccess(translateService.translate('generic.deleted'));
                 },function(response){
                     $scope.showMessageError(response.data);
@@ -52,4 +55,6 @@ angular.module("appModule").controller("userListCtrl",function($scope, UserServi
             }
         );
     }
+
+    $scope.listUser();
 });

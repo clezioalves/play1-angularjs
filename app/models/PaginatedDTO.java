@@ -17,9 +17,6 @@ public class PaginatedDTO {
     private boolean hasNextPage;
 
     @Expose
-    private final int totalPages;
-
-    @Expose
     private final int currentPage;
 
     @Expose
@@ -28,7 +25,6 @@ public class PaginatedDTO {
     public PaginatedDTO(ModelPaginator modelPaginator) {
         this.list = modelPaginator.getCurrentPage();
         this.hasNextPage = modelPaginator.getHasNextPage();
-        this.totalPages = modelPaginator.getRowCount();
         this.currentPage = modelPaginator.getPageNumber();
         this.pageCount = modelPaginator.getPageCount();
     }
