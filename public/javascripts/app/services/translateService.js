@@ -19,8 +19,11 @@ angular.module("appModule").service("translateService", function($cookies) {
              "generic.Previous":"Previous",
              "generic.Next":"Next",
              "generic.Last":"Last",
+             "generic.date.format":"yyyy-MM-dd",
              "users.User":"User",
              "users.Name":"Name",
+             "users.Created":"Registration Date",
+             "users.Modified":"Modification Date",
          },
          "pt-br":{
              "generic.Action":"Ação",
@@ -41,8 +44,11 @@ angular.module("appModule").service("translateService", function($cookies) {
              "generic.Previous":"Anterior",
              "generic.Next":"Próximo",
              "generic.Last":"Último",
+             "generic.date.format":"dd/MM/yyyy",
              "users.User":"Usuário",
              "users.Name":"Nome",
+             "users.Created":"Data de Cadastro",
+             "users.Modified":"Data de Modificação",
          }
     };
 

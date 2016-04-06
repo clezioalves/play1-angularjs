@@ -6,6 +6,8 @@ import models.PaginatedDTO;
 import models.User;
 import play.modules.paginate.ModelPaginator;
 
+import java.util.Date;
+
 /**
  * Created by clezio on 18/03/16.
  */
@@ -18,6 +20,7 @@ public class Users extends BaseController{
             userDTO = new User();
         }
         User user = new User(userDTO.getName());
+        user.setCreated(new Date().getTime());
         validation.valid(user);
         if (validation.hasErrors()) {
             error(HTTP_UNPROCESSABLE_ENTITY, new Gson().toJson(getListErrors(validation.errorsMap())));
@@ -30,6 +33,7 @@ public class Users extends BaseController{
         User userDTO = new GsonBuilder().create().fromJson(request.params.get("body"), User.class);
         User user = User.findById(userDTO.getId());
         user.setName(userDTO.getName());
+        user.setModified(new Date().getTime());
         validation.valid(user);
         if (validation.hasErrors()) {
             error(HTTP_UNPROCESSABLE_ENTITY, new Gson().toJson(getListErrors(validation.errorsMap())));

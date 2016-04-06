@@ -13,3 +13,4 @@ models.user = usuário
 
 #Fields
 user.name = Nome
+user.created = Data de Cadastro

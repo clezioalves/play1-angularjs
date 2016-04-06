@@ -13,3 +13,4 @@ models.user = user
 
 #Fields
 user.name = Name
+user.created = Registration Date

@@ -13,5 +13,13 @@
             <td>{{'users.Name' | translate}}</td>
             <td>{{user.name}}</td>
         </tr>
+        <tr>
+            <td>{{'users.Created' | translate}}</td>
+            <td>{{user.created | date:('generic.date.format' | translate)}}</td>
+        </tr>
+        <tr>
+            <td>{{'users.Modified' | translate}}</td>
+            <td>{{user.modified | date:('generic.date.format' | translate)}}</td>
+        </tr>
     </table>
 </div>

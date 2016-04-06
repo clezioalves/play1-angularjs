@@ -1,8 +1,6 @@
 package models;
 
 import com.google.gson.annotations.Expose;
-import play.data.validation.Max;
-import play.data.validation.Min;
 import play.data.validation.Required;
 
 import javax.persistence.Entity;
@@ -17,6 +15,13 @@ public class User extends BaseModel {
     @Required()
     private String name;
 
+    @Expose
+    @Required()
+    private Long created;
+
+    @Expose
+    private Long modified;
+
     public User() {}
 
     public User(String name) {
@@ -29,5 +34,22 @@ public class User extends BaseModel {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+
+    public Long getCreated() {
+        return created;
+    }
+
+    public void setCreated(Long created) {
+        this.created = created;
+    }
+
+    public Long getModified() {
+        return modified;
+    }
+
+    public void setModified(Long modified) {
+        this.modified = modified;
     }
 }
