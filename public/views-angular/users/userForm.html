@@ -6,13 +6,13 @@
 </fieldset>
 
 <div class="row">
-    <form name="form">
+    <form name="form" ng-submit="saveUser(user)">
         <input type="hidden" ng-model="user.id" >
         <div class="form-group">
             <label>{{'users.Name' | translate}}</label>
             <input type="text" class="form-control" ng-model="user.name" placeholder="{{'users.Name' | translate}}">
         </div>
-        <button class="btn btn-primary" ng-click="saveUser(user)">{{'generic.Save' | translate}}</button>
+        <button class="btn btn-primary">{{'generic.Save' | translate}}</button>
     </form>
 
 </div>
