@@ -48,5 +48,41 @@ angular.module("appModule").controller("mainCtrl",function($scope, $timeout, fla
         })
     }
 
+    $scope.trackerPage = function(){
+        var array = [];
+        var numTracker = 5;
+        var firstPage = $scope.currentPage - ((numTracker - 1) / 2);
+        var lastPage = $scope.currentPage + ((numTracker - 1) / 2);
+
+        if($scope.currentPage - 1 > ((numTracker - 1) / 2)){
+            array.push('...');
+        }
+
+        if(firstPage <= 0){
+            lastPage = lastPage + 1 - firstPage;
+            firstPage = 1;
+        }
+
+        if(lastPage > $scope.pageCount){
+            firstPage -= lastPage - $scope.pageCount;
+            lastPage =  $scope.pageCount;
+            if(firstPage <= 0){
+                firstPage = 1;
+            }
+        }
+
+        var page = firstPage;
+
+        while(page <= lastPage){
+            array.push(parseInt(page, 10));
+            page++;
+        }
+
+        if(($scope.currentPage + (numTracker / 2)) <= $scope.pageCount){
+            array.push('...');
+        }
+        return array;
+    }
+
     $scope.language = $cookies.get("myFavoriteLanguage");
 });

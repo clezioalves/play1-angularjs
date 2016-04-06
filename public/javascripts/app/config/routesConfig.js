@@ -9,6 +9,11 @@ angular.module("appModule").config(function($routeProvider, $httpProvider){
         controller: "userListCtrl"
     });
 
+    $routeProvider.when("/users/:page",{
+        templateUrl: '/public/views-angular/users/userList.html',
+        controller: "userListCtrl"
+    });
+
     $routeProvider.when("/users/form",{
         templateUrl: '/public/views-angular/users/userForm.html',
         controller: "userAddCtrl"

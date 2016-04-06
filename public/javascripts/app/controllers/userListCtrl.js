@@ -1,10 +1,11 @@
-angular.module("appModule").controller("userListCtrl",function($scope, UserService, $controller, translateService){
+angular.module("appModule").controller("userListCtrl",function($scope, UserService, $controller, translateService, $routeParams, $location){
     angular.extend(this, $controller('mainCtrl', {$scope: $scope}));
 
-    $scope.listUser = function(){
+    $scope.listUser = function(page){
         UserService.query(
+            {page: page},
             function(data) {
-                $scope.users = data.list;
+                $scope.listPaginated = data.list;
                 $scope.hasNextPage = data.hasNextPage;
                 $scope.pageCount = data.pageCount;
                 $scope.currentPage = data.currentPage;
@@ -15,39 +16,13 @@ angular.module("appModule").controller("userListCtrl",function($scope, UserServi
         );
     };
 
-    $scope.trackerPage = function(){
-        var array = [];
-        console.info("pageCount: "+$scope.pageCount);
-        console.info("currentPage: "+$scope.currentPage);
-
-        var numTracker = 5;
-
-        if($scope.currentPage > numTracker){
-            array.push('...');
-        }
-
-        var start = $scope.currentPage - numTracker + 1;
-
-        while(start < ($scope.currentPage + numTracker) && start <= $scope.pageCount){
-            if(start > 0){
-                array.push(start);
-            }
-            start++;
-        }
-
-        if(($scope.currentPage + numTracker) < $scope.pageCount){
-            array.push('...');
-        }
-        return array;
-    }
-
     //Remove User
     $scope.removeUser = function(user){
         $scope.confirmPopup(translateService.translate('generic.deleteConfirmation', [user.name]),
             function(confirmed) {
                 if(confirmed){
                 UserService.remove({id: user.id}, function(){
-                    $scope.listUser();
+                    $scope.listUser($routeParams.page);
                     $scope.showMessageSuccess(translateService.translate('generic.deleted'));
                 },function(response){
                     $scope.showMessageError(response.data);
@@ -56,5 +31,9 @@ angular.module("appModule").controller("userListCtrl",function($scope, UserServi
         );
     }
 
-    $scope.listUser();
+    $scope.setCurrencyPage = function(page){
+        $location.path("/users/"+page);
+    }
+
+    $scope.listUser($routeParams.page);
 });

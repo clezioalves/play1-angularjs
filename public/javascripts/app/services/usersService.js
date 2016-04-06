@@ -4,6 +4,7 @@ angular.module("appModule").factory('UserService', function($resource) {
         method: 'PUT' // this method issues a PUT request
     },
     query: {
+        url:'/users/list/:page',
         isArray: false
     }
   });

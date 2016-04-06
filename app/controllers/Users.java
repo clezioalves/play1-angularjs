@@ -40,7 +40,7 @@ public class Users extends BaseController{
 
     public static void list(){
         ModelPaginator paginator = new ModelPaginator(User.class);
-        paginator.setPageSize(10);
+        paginator.setPageSize(7);
         PaginatedDTO users = new PaginatedDTO(paginator);
         renderJSON(users);
     }

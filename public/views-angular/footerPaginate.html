@@ -1,0 +1,26 @@
+<div class="text-center">
+    <ul class="pagination" ng-if="1 < pageCount">
+
+        <li ng-class="{ disabled : currentPage == 1 }" ng-click="(currentPage != 1 ? setCurrencyPage(1) : false)">
+            <a href="">{{'generic.First' | translate}}</a>
+        </li>
+
+        <li ng-class="{ disabled : currentPage == 1 }" ng-click="(currentPage != 1 ? setCurrencyPage(currentPage - 1) : false)">
+            <a href="">{{'generic.Previous' | translate}}</a>
+        </li>
+
+        <li ng-repeat="pageNumber in trackerPage() track by $index"
+            ng-class="{ active : currentPage == pageNumber, disabled : pageNumber == '...' }"
+            ng-click="(currentPage != pageNumber ? setCurrencyPage(pageNumber) : false)">
+            <a href="">{{ pageNumber }}</a>
+        </li>
+
+        <li ng-class="{ disabled : !hasNextPage }" ng-click="(currentPage != pageCount ? setCurrencyPage(currentPage + 1) : false)">
+            <a href="">{{'generic.Next' | translate}}</a>
+        </li>
+
+        <li ng-class="{ disabled : !hasNextPage }">
+            <a href="" ng-click="(currentPage != pageCount ? setCurrencyPage(pageCount) : false)">{{'generic.Last' | translate}}</a>
+        </li>
+    </ul>
+</div>
