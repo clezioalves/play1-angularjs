@@ -1,4 +1,4 @@
-angular.module("appModule").controller("mainCtrl",function($scope, $timeout, flash, $http, $cookies, $route, translateService, genericConfig){
+angular.module("appModule").controller("mainCtrl",function($scope, $timeout, flash, $http, $cookies, $route, translateService, genericConfig, $location){
     $scope.flash = flash;
     //Message success
     $scope.showMessageSuccess = function(message){
@@ -82,6 +82,10 @@ angular.module("appModule").controller("mainCtrl",function($scope, $timeout, fla
             array.push('...');
         }
         return array;
+    }
+
+    $scope.setCurrencyPage = function(page){
+        $location.search('page', page);
     }
 
     $scope.language = $cookies.get("myFavoriteLanguage");

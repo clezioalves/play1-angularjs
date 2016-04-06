@@ -1,4 +1,4 @@
-angular.module("appModule").controller("userListCtrl",function($scope, UserService, $controller, translateService, $routeParams, $location){
+angular.module("appModule").controller("userListCtrl",function($scope, UserService, $controller, translateService, $routeParams){
     angular.extend(this, $controller('mainCtrl', {$scope: $scope}));
 
     $scope.listUser = function(page){
@@ -29,10 +29,6 @@ angular.module("appModule").controller("userListCtrl",function($scope, UserServi
                 });}
             }
         );
-    }
-
-    $scope.setCurrencyPage = function(page){
-        $location.path("/users/"+page);
     }
 
     $scope.listUser($routeParams.page);
