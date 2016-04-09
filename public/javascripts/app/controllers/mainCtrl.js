@@ -1,4 +1,4 @@
-angular.module("appModule").controller("mainCtrl",function($scope, $timeout, flash, $http, $cookies, $route, translateService, genericConfig, $location){
+angular.module("appModule").controller("mainCtrl",function($scope, $timeout, flash, $http, $cookies, translateService, genericConfig, $location){
     $scope.flash = flash;
     //Message success
     $scope.showMessageSuccess = function(message){
@@ -27,7 +27,7 @@ angular.module("appModule").controller("mainCtrl",function($scope, $timeout, fla
           url: '/language/'+language
         }).then(function successCallback(response) {
             $scope.language = language;
-            $route.reload();
+            location.reload();
         });
     };
 
