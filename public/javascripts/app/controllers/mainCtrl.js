@@ -12,7 +12,7 @@ angular.module("appModule").controller("mainCtrl",function($scope, $timeout, fla
         listHtml += "</ul>";
         Flash.create('success',
             '<span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> '+
-            listHtml, 120000);
+            listHtml, genericConfig.timeSuccess);
     };
 
     //Message error
