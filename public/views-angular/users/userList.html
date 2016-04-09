@@ -1,4 +1,7 @@
-<a class="btn btn-primary btn-block" href="#users/form">{{'generic.New' | translate:[('users.User' | translate)]}}</a>
+<a class="btn btn-primary" href="#users/form">
+    <span class="glyphicon glyphicon-plus"></span>
+    {{'generic.New' | translate:[('users.User' | translate)]}}
+</a>
 
 <!-- /.panel-heading -->
 <div class="panel-body">
@@ -8,7 +11,7 @@
             <tr>
                 <th width="1%">#</th>
                 <th>{{'users.Name' | translate}}</th>
-                <th width="14%">{{'generic.Action' | translate}}</th>
+                <th width="25%">{{'generic.Action' | translate}}</th>
             </tr>
             </thead>
             <tbody>
@@ -17,10 +20,12 @@
                 <td><a href="#users/detail/{{user.id}}">{{user.name}}</a></td>
                 <td>
                     <a class="btn btn-success" href="#users/edit/{{user.id}}">
-                        <span class="glyphicon glyphicon-edit" aria-hidden="true" title="{{'generic.Edit' | translate:[('users.User' | translate)]}}"></span>
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        {{'generic.Edit' | translate}}
                     </a>
-                    <a class="btn btn-danger" ng-click="removeUser(user);" title="{{'generic.Delete' | translate:[('users.User' | translate)]}}">
+                    <a class="btn btn-danger" ng-click="removeUser(user);">
                         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        {{'generic.Delete' | translate}}
                     </a>
                 </td>
             </tr>
