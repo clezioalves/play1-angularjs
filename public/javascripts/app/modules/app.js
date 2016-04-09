@@ -2,5 +2,6 @@ angular.module("appModule",
     ['ngResource',
     'ngRoute',
     'ngLoadingSpinner',
-    'ngCookies'
+    'ngCookies',
+    'ngFlash'
     ]);

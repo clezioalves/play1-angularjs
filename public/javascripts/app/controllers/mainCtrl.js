@@ -1,24 +1,33 @@
-angular.module("appModule").controller("mainCtrl",function($scope, $timeout, flash, $http, $cookies, translateService, genericConfig, $location){
+angular.module("appModule").controller("mainCtrl",function($scope, $timeout, flash, $http, $cookies, translateService, genericConfig, $location, Flash){
     $scope.flash = flash;
     //Message success
-    $scope.showMessageSuccess = function(message){
-        if (Object.prototype.toString.call(message) != '[object Array]') {
-            $scope.successes = new Array(message);
-        }else{
-            $scope.successes = message;
+    $scope.showMessageSuccess = function(messages){
+        if (Object.prototype.toString.call(messages) != '[object Array]') {
+            messages = new Array(messages);
         }
-
-        $timeout(function(){$scope.successes = ""}, genericConfig.timeSuccess);
+        var listHtml = "<ul>";
+        messages.forEach(function(msg){
+            listHtml += "<li>" + msg + "</li>";
+        });
+        listHtml += "</ul>";
+        Flash.create('success',
+            '<span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> '+
+            listHtml, 120000);
     };
-    //Message error
-    $scope.showMessageError = function(message){
 
-        if (Object.prototype.toString.call(message) != '[object Array]') {
-            $scope.errors = new Array(message);
-        }else{
-            $scope.errors = message;
+    //Message error
+    $scope.showMessageError = function(messages){
+        if (Object.prototype.toString.call(messages) != '[object Array]') {
+            messages = new Array(messages);
         }
-        $timeout(function(){$scope.errors = ""}, genericConfig.timeError);
+        var listHtml = "<ul>";
+        messages.forEach(function(msg){
+            listHtml += "<li>" + msg + "</li>";
+        });
+        listHtml += "</ul>";
+        Flash.create('danger',
+            '<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> '
+            + listHtml, genericConfig.timeError);
     };
 
     $scope.setLanguage = function(language){
@@ -30,6 +39,14 @@ angular.module("appModule").controller("mainCtrl",function($scope, $timeout, fla
             location.reload();
         });
     };
+
+    if(flash.getMessages()){
+        if(flash.isInfo){
+            $scope.showMessageSuccess(flash.getMessages());
+        }else{
+            $scope.showMessageError(flash.getMessages());
+        }
+    }
 
     $scope.confirmPopup = function(message, callback){
         bootbox.confirm({
@@ -46,7 +63,7 @@ angular.module("appModule").controller("mainCtrl",function($scope, $timeout, fla
             },
             callback: callback
         })
-    }
+    };
 
     $scope.trackerPage = function(){
         var array = [];
@@ -82,11 +99,11 @@ angular.module("appModule").controller("mainCtrl",function($scope, $timeout, fla
             array.push('...');
         }
         return array;
-    }
+    };
 
     $scope.setCurrencyPage = function(page){
         $location.search('page', page);
-    }
+    };
 
     $scope.language = $cookies.get("myFavoriteLanguage");
 });

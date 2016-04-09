@@ -25,6 +25,7 @@
         <script src="@{'/public/javascripts/angular-loading/angular-spinner.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/angular-loading/angular-loading-spinner.js'}" type="text/javascript" charset="${_response_encoding}"></script>
 		<script src="@{'/public/javascripts/bootbox.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/angular-flash/angular-flash.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
 
         <script src="@{'/public/javascripts/app/services/flashService.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/app/services/usersService.js'}" type="text/javascript" charset="${_response_encoding}"></script>
@@ -77,6 +78,7 @@
             </nav>
 
             <span us-spinner="{radius:30, width:8, length: 16}"></span>
+            <flash-message duration="5000" show-close="true" ></flash-message>
 
             <div class="row-fluid">
                 <!--Body content-->

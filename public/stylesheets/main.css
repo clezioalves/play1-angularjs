@@ -1,0 +1,13 @@
+.ng-isolate-scope{
+    position: fixed;
+    right: 13px;
+}
+
+.ng-isolate-scope ul{
+    padding: 7px;
+}
+
+.ng-isolate-scope li{
+    list-style: none;
+}
+
