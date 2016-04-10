@@ -29,12 +29,17 @@
 
         <script src="@{'/public/javascripts/app/services/flashService.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/app/services/usersFactory.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/services/occupationsFactory.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/app/services/translateService.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/app/controllers/mainCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/app/controllers/userListCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/app/controllers/userAddCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/app/controllers/userEditCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/app/controllers/userDetailCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/controllers/occupationListCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/controllers/occupationAddCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/controllers/occupationEditCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/controllers/occupationDetailCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/app/filters/translateFilter.js'}" type="text/javascript" charset="${_response_encoding}"></script>
 
 
@@ -66,6 +71,7 @@
                                     {{'generic.Register' | translate}} <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
+                                    <li><a href="#/occupations">{{'generic.Occupations' | translate}}</a></li>
                                     <li><a href="#/users">{{'generic.Users' | translate}}</a></li>
                                     <!--li><a href="#">Another action</a></li>
                                     <li role="separator" class="divider"></li>

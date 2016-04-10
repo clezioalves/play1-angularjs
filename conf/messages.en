@@ -10,7 +10,10 @@ validation.required = The field %s is required.
 error.noSaved = The information of %s could not be saved. Please, try again.
 entity.invalid = Invalid %s
 models.user = user
+models.occupation = occupation
 
 #Fields
 user.name = Name
 user.created = Registration Date
+occupation.name = Name
+occupation.created = Registration Date

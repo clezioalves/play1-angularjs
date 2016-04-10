@@ -1,0 +1,28 @@
+<a class="btn btn-primary" href="#occupations">
+    <span class="glyphicon glyphicon-arrow-left"></span>
+    {{'generic.Back' | translate}}
+</a>
+
+<fieldset>
+    <legend><i class="fa fa-cloud-download"></i> {{'generic.Detail' | translate:[('occupations.Occupation' | translate)]}} </legend>
+</fieldset>
+<div class="row">
+    <table>
+        <tr>
+            <td class="tdDetailLeft">#</td>
+            <td>{{occupation.id}}</td>
+        </tr>
+        <tr>
+            <td class="tdDetailLeft">{{'occupations.Name' | translate}}</td>
+            <td>{{occupation.name}}</td>
+        </tr>
+        <tr>
+            <td class="tdDetailLeft">{{'generic.Created' | translate}}</td>
+            <td>{{occupation.created | date:('generic.date.format' | translate)}}</td>
+        </tr>
+        <tr>
+            <td class="tdDetailLeft">{{'generic.Modified' | translate}}</td>
+            <td>{{occupation.modified | date:('generic.date.format' | translate)}}</td>
+        </tr>
+    </table>
+</div>

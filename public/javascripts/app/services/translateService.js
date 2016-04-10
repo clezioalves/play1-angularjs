@@ -21,10 +21,13 @@ angular.module("appModule").service("translateService", function($cookies) {
              "generic.date.format":"yyyy-MM-dd",
              "generic.Register":"Register",
              "generic.Users":"Users",
+             "generic.Occupations":"Occupations",
+             "generic.Created":"Registration Date",
+             "generic.Modified":"Modification Date",
              "users.User":"User",
              "users.Name":"Name",
-             "users.Created":"Registration Date",
-             "users.Modified":"Modification Date",
+             "occupations.Occupation":"Occupation",
+             "occupations.Name":"Name",
          },
          "pt-br":{
              "generic.Action":"Ação",
@@ -47,10 +50,13 @@ angular.module("appModule").service("translateService", function($cookies) {
              "generic.date.format":"dd/MM/yyyy",
              "generic.Register":"Cadastro",
              "generic.Users":"Usuários",
+             "generic.Occupations":"Cargos",
+             "generic.Created":"Data de Cadastro",
+             "generic.Modified":"Data de Modificação",
              "users.User":"Usuário",
              "users.Name":"Nome",
-             "users.Created":"Data de Cadastro",
-             "users.Modified":"Data de Modificação",
+             "occupations.Occupation":"Cargo",
+             "occupations.Name":"Nome",
          }
     };
 

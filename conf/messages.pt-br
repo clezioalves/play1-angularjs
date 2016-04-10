@@ -10,7 +10,10 @@ validation.required = O campo %s deve ser informado.
 error.noSaved = As informações de %s não foram salvos. Por favor, tente novamente.
 entity.invalid = Identificador de %s inválido
 models.user = usuário
+models.occupation = cargo
 
 #Fields
 user.name = Nome
 user.created = Data de Cadastro
+occupation.name = Nome
+occupation.created = Data de Cadastro

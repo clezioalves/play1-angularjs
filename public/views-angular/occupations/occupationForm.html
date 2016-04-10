@@ -1,0 +1,23 @@
+<a class="btn btn-primary" href="#occupations">
+    <span class="glyphicon glyphicon-arrow-left"></span>
+    {{'generic.Back' | translate}}
+</a>
+
+<fieldset>
+    <legend><i class="fa fa-cloud-download"></i> {{labelOperation}}</legend>
+</fieldset>
+
+<div class="row">
+    <form name="form" ng-submit="saveOccupation(occupation)">
+        <input type="hidden" ng-model="occupation.id" >
+        <div class="form-group">
+            <label>{{'occupations.Name' | translate}}</label>
+            <input type="text" class="form-control" ng-model="occupation.name" placeholder="{{'occupations.Name' | translate}}">
+        </div>
+        <button class="btn btn-primary">
+            <span class="glyphicon glyphicon glyphicon-ok"></span>
+            {{'generic.Save' | translate}}
+        </button>
+    </form>
+
+</div>
