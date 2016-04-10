@@ -46,7 +46,7 @@ public class Occupations extends BaseController{
      }
 
     public static void list(){
-        ModelPaginator paginator = new ModelPaginator(Occupation.class);
+        ModelPaginator paginator = new ModelPaginator(Occupation.class).orderBy("name ASC");
         paginator.setPageSize(7);
         PaginatedDTO occupations = new PaginatedDTO(paginator);
         renderJSON(occupations);
@@ -83,7 +83,7 @@ public class Occupations extends BaseController{
     }
 
     public static void all(){
-        List<Occupation> occupations = Occupation.findAll();
+        List<Occupation> occupations = Occupation.find("order by name").fetch();
         renderJSON(occupations);
     }
 }

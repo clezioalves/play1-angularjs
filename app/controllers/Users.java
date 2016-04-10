@@ -52,7 +52,7 @@ public class Users extends BaseController{
      }
 
     public static void list(){
-        ModelPaginator paginator = new ModelPaginator(User.class);
+        ModelPaginator paginator = new ModelPaginator(User.class).orderBy("name ASC");
         paginator.setPageSize(7);
         PaginatedDTO users = new PaginatedDTO(paginator);
         renderJSON(users);
