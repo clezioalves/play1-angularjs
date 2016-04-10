@@ -1,7 +1,7 @@
-angular.module("appModule").controller("userAddCtrl",function($scope, UserService, $controller, $location, flash, translateService){
+angular.module("appModule").controller("userAddCtrl",function($scope, UserFactory, $controller, $location, flash, translateService){
     angular.extend(this, $controller('mainCtrl', {$scope: $scope}));
     $scope.saveUser = function(user){
-        UserService.save(user, function(){
+        UserFactory.save(user, function(){
                 flash.setMessagesSuccess(translateService.translate('generic.saved'));
                 $location.path("/users");
             },

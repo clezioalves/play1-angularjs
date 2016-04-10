@@ -18,8 +18,8 @@ angular.module("appModule").config(function($routeProvider, $httpProvider){
         templateUrl: '/public/views-angular/users/userForm.html',
         controller: "userEditCtrl",
         resolve: {
-            user: function($route, UserService) {
-                 return UserService.get({ id: $route.current.params.id })
+            user: function($route, UserFactory) {
+                 return UserFactory.get({ id: $route.current.params.id })
             }
         }
     });
@@ -28,8 +28,8 @@ angular.module("appModule").config(function($routeProvider, $httpProvider){
         templateUrl: '/public/views-angular/users/userDetail.html',
         controller: "userDetailCtrl",
         resolve: {
-            user: function($route, UserService) {
-                 return UserService.get({ id: $route.current.params.id })
+            user: function($route, UserFactory) {
+                 return UserFactory.get({ id: $route.current.params.id })
             }
         }
     });

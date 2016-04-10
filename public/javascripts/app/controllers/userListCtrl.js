@@ -1,8 +1,8 @@
-angular.module("appModule").controller("userListCtrl",function($scope, UserService, $controller, translateService, $routeParams){
+angular.module("appModule").controller("userListCtrl",function($scope, UserFactory, $controller, translateService, $routeParams){
     angular.extend(this, $controller('mainCtrl', {$scope: $scope}));
 
     $scope.listUser = function(page){
-        UserService.query(
+        UserFactory.query(
             {page: page},
             function(data) {
                 $scope.listPaginated = data.list;
@@ -21,7 +21,7 @@ angular.module("appModule").controller("userListCtrl",function($scope, UserServi
         $scope.confirmPopup(translateService.translate('generic.deleteConfirmation', [user.name]),
             function(confirmed) {
                 if(confirmed){
-                UserService.remove({id: user.id}, function(){
+                UserFactory.remove({id: user.id}, function(){
                     $scope.listUser($routeParams.page);
                     $scope.showMessageSuccess(translateService.translate('generic.deleted'));
                 },function(response){
