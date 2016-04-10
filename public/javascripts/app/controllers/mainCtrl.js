@@ -11,23 +11,27 @@ angular.module("appModule").controller("mainCtrl",function($scope, $timeout, fla
         });
         listHtml += "</ul>";
         Flash.create('success',
-            '<span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> '+
+            '<strong> '+translateService.translate('generic.Done')+'! </strong>' +
             listHtml, genericConfig.timeSuccess);
     };
 
     //Message error
     $scope.showMessageError = function(messages){
+
         if (Object.prototype.toString.call(messages) != '[object Array]') {
             messages = new Array(messages);
+
         }
         var listHtml = "<ul>";
         messages.forEach(function(msg){
+
             listHtml += "<li>" + msg + "</li>";
         });
         listHtml += "</ul>";
+
         Flash.create('danger',
-            '<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> '
-            + listHtml, genericConfig.timeError);
+            '<strong> '+translateService.translate('generic.Oops')+'! </strong>' +
+            listHtml, genericConfig.timeError);
     };
 
     $scope.setLanguage = function(language){
