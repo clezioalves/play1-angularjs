@@ -37,7 +37,7 @@ public class BaseController extends Controller {
     public static void beforeFilter() {
         Http.Cookie cookie = request.cookies.get(MY_FAVORITE_LANGUAGE);
         if(cookie == null){
-            response.setCookie(MY_FAVORITE_LANGUAGE, "en", TIME_FAVORITE_LANGUAGE_COOKIE);
+            response.setCookie(MY_FAVORITE_LANGUAGE, "pt-br", TIME_FAVORITE_LANGUAGE_COOKIE);
         }
     }
 
