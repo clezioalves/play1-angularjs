@@ -2,10 +2,12 @@ package controllers;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
 import models.PaginatedDTO;
 import models.Occupation;
 import play.modules.paginate.ModelPaginator;
 
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 
@@ -51,12 +53,25 @@ public class Occupations extends BaseController{
     }
 
     public static void delete(Long id){
-        Occupation occupation = Occupation.findById(id);
-        if(occupation == null){
-            error(HTTP_UNPROCESSABLE_ENTITY, getMessage("entity.invalid", getMessage("models.occupation")));
+        try {
+            Occupation occupation = Occupation.findById(id);
+            if (occupation == null) {
+                error(HTTP_UNPROCESSABLE_ENTITY, getMessage("entity.invalid", getMessage("models.occupation")));
+            }
+            occupation.delete();
+            renderJSON(occupation);
+        }catch(Exception cvex){
+            Throwable ex = cvex;
+            while(ex.getCause() != null){
+                ex = ex.getCause();
+            }
+            if(ex instanceof SQLException){
+                if(((SQLException) ex).getErrorCode() == 1451){
+                    error(HTTP_UNPROCESSABLE_ENTITY, getMessage("entity.constraint"));
+                }
+            }
+            error(HTTP_UNPROCESSABLE_ENTITY, ex.getMessage());
         }
-        occupation.delete();
-        renderJSON(occupation);
     }
 
     public static void get(Long id){

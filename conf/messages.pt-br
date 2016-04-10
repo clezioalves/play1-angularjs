@@ -9,6 +9,7 @@ validation.required = O campo %s deve ser informado.
 #Entity
 error.noSaved = As informações de %s não foram salvos. Por favor, tente novamente.
 entity.invalid = Identificador de %s inválido
+entity.constraint = Existem relacionamentos que impedem a exclusão deste registro
 models.user = usuário
 models.occupation = cargo
 

@@ -9,6 +9,7 @@ validation.required = The field %s is required.
 #Entity
 error.noSaved = The information of %s could not be saved. Please, try again.
 entity.invalid = Invalid %s
+entity.constraint = There are relationships that prevent the deletion of this record
 models.user = user
 models.occupation = occupation
 
