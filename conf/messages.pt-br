@@ -15,5 +15,6 @@ models.occupation = cargo
 #Fields
 user.name = Nome
 user.created = Data de Cadastro
+user.occupation = Cargo
 occupation.name = Nome
 occupation.created = Data de Cadastro

@@ -17,6 +17,10 @@
             <td>{{user.name}}</td>
         </tr>
         <tr>
+            <td class="tdDetailLeft">{{'occupations.Occupation' | translate}}</td>
+            <td>{{user.occupation.name}}</td>
+        </tr>
+        <tr>
             <td class="tdDetailLeft">{{'generic.Created' | translate}}</td>
             <td>{{user.created | date:('generic.date.format' | translate)}}</td>
         </tr>

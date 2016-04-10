@@ -2,6 +2,7 @@ package controllers;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import models.Occupation;
 import models.PaginatedDTO;
 import models.User;
 import play.modules.paginate.ModelPaginator;
@@ -21,6 +22,10 @@ public class Users extends BaseController{
         }
         User user = new User(userDTO.getName());
         user.setCreated(new Date().getTime());
+        user.setOccupation(null);
+        if(userDTO.getOccupation() != null && userDTO.getOccupation().getId() != null) {
+            user.setOccupation((Occupation) Occupation.findById(userDTO.getOccupation().getId()));
+        }
         validation.valid(user);
         if (validation.hasErrors()) {
             error(HTTP_UNPROCESSABLE_ENTITY, new Gson().toJson(getListErrors(validation.errorsMap())));
@@ -34,6 +39,10 @@ public class Users extends BaseController{
         User user = User.findById(userDTO.getId());
         user.setName(userDTO.getName());
         user.setModified(new Date().getTime());
+        user.setOccupation(null);
+        if(userDTO.getOccupation() != null && userDTO.getOccupation().getId() != null) {
+            user.setOccupation((Occupation) Occupation.findById(userDTO.getOccupation().getId()));
+        }
         validation.valid(user);
         if (validation.hasErrors()) {
             error(HTTP_UNPROCESSABLE_ENTITY, new Gson().toJson(getListErrors(validation.errorsMap())));

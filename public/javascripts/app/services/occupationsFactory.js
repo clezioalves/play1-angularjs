@@ -6,6 +6,10 @@ angular.module("appModule").factory('OccupationFactory', function($resource) {
     query: {
         url:'/occupations/list/:page',
         isArray: false
+    },
+    all: {
+        url:'/occupations/all',
+        isArray: true
     }
   });
 });

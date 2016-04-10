@@ -15,5 +15,6 @@ models.occupation = occupation
 #Fields
 user.name = Name
 user.created = Registration Date
+user.occupation = Occupation
 occupation.name = Name
 occupation.created = Registration Date

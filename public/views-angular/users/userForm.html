@@ -14,6 +14,13 @@
             <label>{{'users.Name' | translate}}</label>
             <input type="text" class="form-control" ng-model="user.name" placeholder="{{'users.Name' | translate}}">
         </div>
+        <div class="form-group">
+            <label>{{'occupations.Occupation' | translate}}</label>
+            <select class="form-control" ng-model="user.occupation.id" ng-init="user.occupation.id"
+                    ng-options="o.id as o.name for o in occupations">
+                <option value="">-- {{'generic.select' | translate}} --</option>
+            </select>
+        </div>
         <button class="btn btn-primary">
             <span class="glyphicon glyphicon glyphicon-ok"></span>
             {{'generic.Save' | translate}}

@@ -7,6 +7,7 @@ import models.Occupation;
 import play.modules.paginate.ModelPaginator;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by clezio on 09/04/16.
@@ -64,5 +65,10 @@ public class Occupations extends BaseController{
             error(HTTP_UNPROCESSABLE_ENTITY, getMessage("entity.invalid", getMessage("models.occupation")));
         }
         renderJSON(occupation);
+    }
+
+    public static void all(){
+        List<Occupation> occupations = Occupation.findAll();
+        renderJSON(occupations);
     }
 }

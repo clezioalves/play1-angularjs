@@ -4,6 +4,8 @@ import com.google.gson.annotations.Expose;
 import play.data.validation.Required;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 
 /**
  * Created by clezio on 18/03/16.
@@ -14,6 +16,11 @@ public class User extends BaseModel {
     @Expose
     @Required()
     private String name;
+
+    @Expose
+    @Required()
+    @ManyToOne(fetch= FetchType.EAGER)
+    private Occupation occupation;
 
     @Expose
     @Required()
@@ -36,6 +43,13 @@ public class User extends BaseModel {
         this.name = name;
     }
 
+    public Occupation getOccupation() {
+        return occupation;
+    }
+
+    public void setOccupation(Occupation occupation) {
+        this.occupation = occupation;
+    }
 
     public Long getCreated() {
         return created;

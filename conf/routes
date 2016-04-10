@@ -11,8 +11,10 @@ POST    /{controller}                           {controller}.add
 PUT     /{controller}                           {controller}.edit
 GET     /{controller}/list                      {controller}.list
 GET     /{controller}/list/{page}               {controller}.list
+GET     /{controller}/all                       {controller}.all
 GET     /{controller}/{id}                      {controller}.get
 DELETE  /{controller}/{id}                      {controller}.delete
+
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

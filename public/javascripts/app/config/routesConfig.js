@@ -15,7 +15,12 @@ angular.module("appModule").config(function($routeProvider, $httpProvider){
     });
     $routeProvider.when("/users/form",{
         templateUrl: '/public/views-angular/users/userForm.html',
-        controller: "userAddCtrl"
+        controller: "userAddCtrl",
+        resolve: {
+            occupations: function(OccupationFactory) {
+                 return OccupationFactory.all()
+            }
+        }
     });
     $routeProvider.when("/users/edit/:id",{
         templateUrl: '/public/views-angular/users/userForm.html',
@@ -23,6 +28,9 @@ angular.module("appModule").config(function($routeProvider, $httpProvider){
         resolve: {
             user: function($route, UserFactory) {
                  return UserFactory.get({ id: $route.current.params.id })
+            },
+            occupations: function(OccupationFactory) {
+                 return OccupationFactory.all()
             }
         }
     });
