@@ -1,6 +1,5 @@
 package controllers;
 
-import play.cache.Cache;
 import play.data.validation.Error;
 import play.i18n.Messages;
 import play.mvc.Before;
@@ -18,9 +17,9 @@ public class BaseController extends Controller {
 
     public static final int HTTP_UNPROCESSABLE_ENTITY = 422;
 
-    public static final String VALIDATION_MIN = "validation.min";
+    public static final String VALIDATION_MIN_SIZE = "validation.minSize";
 
-    public static final String VALIDATION_MAX = "validation.max";
+    public static final String VALIDATION_MAX_SIZE = "validation.maxSize";
 
     public static final String VALIDATION_REQUIRED = "validation.required";
 
@@ -51,11 +50,15 @@ public class BaseController extends Controller {
             if(key.contains(".")) {
                 for(Error error: errorsMap.get(key)) {
                     if(VALIDATION_REQUIRED.equals(error.getMessageKey()) ||
-                            VALIDATION_MIN.equals(error.getMessageKey()) ||
-                            VALIDATION_MAX.equals(error.getMessageKey())) {
+                            VALIDATION_MIN_SIZE.equals(error.getMessageKey()) ||
+                            VALIDATION_MAX_SIZE.equals(error.getMessageKey())) {
                         errors.add(getMessage(error.getMessageKey(), getMessage(error.getKey())));
                     }else{
-                        errors.add(getMessage(error.getMessageKey()));
+                        try {
+                            errors.add(getMessage(error.getMessageKey()));
+                        }catch(Exception e){
+                            errors.add(error.getMessageKey());
+                        }
                     }
                 }
             }

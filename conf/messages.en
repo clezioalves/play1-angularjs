@@ -2,8 +2,8 @@
 # For example, for French create a messages.fr file
 #
 #Validation
-validation.min = The field %s is too short.
-validation.max = The field %s is too long.
+validation.minSize = The field %s is too short.
+validation.maxSize = The field %s is too long.
 validation.required = The field %s is required.
 
 #Entity
