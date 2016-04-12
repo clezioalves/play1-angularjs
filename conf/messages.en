@@ -19,3 +19,6 @@ user.created = Registration Date
 user.occupation = Occupation
 occupation.name = Name
 occupation.created = Registration Date
+project.name = Name
+project.created = Registration Date
+project.participants = Participants

@@ -1,0 +1,34 @@
+<a class="btn btn-primary" href="#projects">
+    <span class="glyphicon glyphicon-arrow-left"></span>
+    {{'generic.Back' | translate}}
+</a>
+
+<fieldset>
+    <legend><i class="fa fa-cloud-download"></i> {{labelOperation}}</legend>
+</fieldset>
+
+<div class="row">
+    <form name="form" ng-submit="saveProject(project)">
+        <input type="hidden" ng-model="project.id" >
+        <div class="form-group">
+            <label>{{'projects.Name' | translate}}</label>
+            <input type="text" class="form-control" ng-model="project.name" placeholder="{{'projects.Name' | translate}}">
+        </div>
+        <div class="form-group">
+            <label>{{'projects.Description' | translate}}</label>
+            <textarea type="text" class="form-control" ng-model="project.description" placeholder="{{'projects.Description' | translate}}" >
+            </textarea>
+        </div>
+        <div class="form-group">
+            <label>{{'projects.Participants' | translate}}</label>
+            <select size="10" multiple="true" class="form-control" ng-model="project.participants"
+                    ng-options="u.name group by u.occupation.name for u in participants track by u.id">
+            </select>
+        </div>
+        <button class="btn btn-primary">
+            <span class="glyphicon glyphicon glyphicon-ok"></span>
+            {{'generic.Save' | translate}}
+        </button>
+    </form>
+
+</div>

@@ -6,6 +6,10 @@ angular.module("appModule").factory('UserFactory', function($resource) {
     query: {
         url:'/users/list/:page',
         isArray: false
+    },
+    all: {
+        url:'/users/all',
+        isArray: true
     }
   });
 });

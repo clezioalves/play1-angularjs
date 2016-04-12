@@ -1,0 +1,53 @@
+<a class="btn btn-primary" href="#projects">
+    <span class="glyphicon glyphicon-arrow-left"></span>
+    {{'generic.Back' | translate}}
+</a>
+
+<fieldset>
+    <legend><i class="fa fa-cloud-download"></i> {{'generic.Detail' | translate:[('projects.Project' | translate)]}} </legend>
+</fieldset>
+<div class="row">
+    <table>
+        <tr>
+            <td class="tdDetailLeft">#</td>
+            <td>{{project.id}}</td>
+        </tr>
+        <tr>
+            <td class="tdDetailLeft">{{'projects.Name' | translate}}</td>
+            <td>{{project.name}}</td>
+        </tr>
+        <tr>
+            <td class="tdDetailLeft">{{'projects.Description' | translate}}</td>
+            <td>{{project.description}}</td>
+        </tr>
+        <tr>
+            <td class="tdDetailLeft">{{'projects.Participants' | translate}}</td>
+            <td>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>{{'users.Name' | translate}}</th>
+                            <th>{{'occupations.Occupation' | translate}}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="user in project.participants">
+                            <td>{{user.name}}</td>
+                            <td>{{user.occupation.name}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="tdDetailLeft">{{'generic.Created' | translate}}</td>
+            <td>{{project.created | date:('generic.date.format' | translate)}}</td>
+        </tr>
+        <tr>
+            <td class="tdDetailLeft">{{'generic.Modified' | translate}}</td>
+            <td>{{project.modified | date:('generic.date.format' | translate)}}</td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,39 @@
+<a class="btn btn-primary" href="#projects/form">
+    <span class="glyphicon glyphicon-plus"></span>
+    {{'generic.New' | translate:[('projects.Project' | translate)]}}
+</a>
+
+<!-- /.panel-heading -->
+<div class="panel-body">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th width="1%">#</th>
+                <th>{{'projects.Name' | translate}}</th>
+                <th>{{'projects.Description' | translate}}</th>
+                <th width="25%">{{'generic.Action' | translate}}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="project in listPaginated">
+                <td>{{project.id}}</td>
+                <td><a href="#projects/detail/{{project.id}}">{{project.name}}</a></td>
+                <td>{{project.description}}</td>
+                <td>
+                    <a class="btn btn-success" href="#projects/edit/{{project.id}}">
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        {{'generic.Edit' | translate}}
+                    </a>
+                    <a class="btn btn-danger" ng-click="removeProject(project);">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        {{'generic.Delete' | translate}}
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div ng-include src="'/public/views-angular/footerPaginate.html'"></div>
+    </div>
+    <!-- /.table-responsive -->
+</div>

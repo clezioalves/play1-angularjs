@@ -1,11 +1,12 @@
 angular.module("appModule").config(function($routeProvider, $httpProvider){
 
     $routeProvider.when("/",{
-        templateUrl: '/public/views-angular/home.html'
+        //templateUrl: '/public/views-angular/home.html'
+        redirectTo: '/projects'
     });
 
     $routeProvider.otherwise({
-        redirectTo: '/'
+        redirectTo: '/projects'
     });
 
     //User
@@ -68,6 +69,42 @@ angular.module("appModule").config(function($routeProvider, $httpProvider){
         resolve: {
             occupation: function($route, OccupationFactory) {
                  return OccupationFactory.get({ id: $route.current.params.id })
+            }
+        }
+    });
+
+    //Project
+    $routeProvider.when("/projects",{
+        templateUrl: '/public/views-angular/projects/projectList.html',
+        controller: "projectListCtrl"
+    });
+    $routeProvider.when("/projects/form",{
+        templateUrl: '/public/views-angular/projects/projectForm.html',
+        controller: "projectAddCtrl",
+        resolve: {
+            participants: function(UserFactory) {
+                 return UserFactory.all()
+            }
+        }
+    });
+    $routeProvider.when("/projects/edit/:id",{
+        templateUrl: '/public/views-angular/projects/projectForm.html',
+        controller: "projectEditCtrl",
+        resolve: {
+            project: function($route, ProjectFactory) {
+                 return ProjectFactory.get({ id: $route.current.params.id })
+            },
+            participants: function(UserFactory) {
+                 return UserFactory.all()
+            }
+        }
+    });
+    $routeProvider.when("/projects/detail/:id",{
+        templateUrl: '/public/views-angular/projects/projectDetail.html',
+        controller: "projectDetailCtrl",
+        resolve: {
+            project: function($route, ProjectFactory) {
+                 return ProjectFactory.get({ id: $route.current.params.id })
             }
         }
     });

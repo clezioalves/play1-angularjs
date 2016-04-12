@@ -3,3 +3,4 @@
 require:
     - play
     - play -> paginate 0.14
+    - play -> pdf 0.9

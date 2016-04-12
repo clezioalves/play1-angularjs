@@ -21,6 +21,7 @@ angular.module("appModule").service("translateService", function($cookies) {
              "generic.date.format":"yyyy-MM-dd",
              "generic.Register":"Register",
              "generic.Users":"Users",
+             "generic.Projects":"Projects",
              "generic.Occupations":"Occupations",
              "generic.Created":"Registration Date",
              "generic.Modified":"Modification Date",
@@ -31,6 +32,11 @@ angular.module("appModule").service("translateService", function($cookies) {
              "users.Name":"Name",
              "occupations.Occupation":"Occupation",
              "occupations.Name":"Name",
+             "projects.Project":"Project",
+             "projects.Name":"Name",
+             "projects.Description":"Description",
+             "projects.Users":"Users",
+             "projects.Participants":"Participants",
          },
          "pt-br":{
              "generic.Action":"Ação",
@@ -53,6 +59,7 @@ angular.module("appModule").service("translateService", function($cookies) {
              "generic.date.format":"dd/MM/yyyy",
              "generic.Register":"Cadastro",
              "generic.Users":"Usuários",
+             "generic.Projects":"Projetos",
              "generic.Occupations":"Cargos",
              "generic.Created":"Data de Cadastro",
              "generic.Modified":"Data de Modificação",
@@ -63,6 +70,10 @@ angular.module("appModule").service("translateService", function($cookies) {
              "users.Name":"Nome",
              "occupations.Occupation":"Cargo",
              "occupations.Name":"Nome",
+             "projects.Project":"Projeto",
+             "projects.Name":"Nome",
+             "projects.Description":"Descrição",
+             "projects.Participants":"Participantes",
          }
     };
 

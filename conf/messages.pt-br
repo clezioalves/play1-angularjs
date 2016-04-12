@@ -19,3 +19,6 @@ user.created = Data de Cadastro
 user.occupation = Cargo
 occupation.name = Nome
 occupation.created = Data de Cadastro
+project.name = Nome
+project.created = Data de Cadastro
+project.participants = Participantes

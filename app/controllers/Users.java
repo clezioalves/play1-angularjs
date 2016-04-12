@@ -7,7 +7,9 @@ import models.PaginatedDTO;
 import models.User;
 import play.modules.paginate.ModelPaginator;
 
+import java.sql.SQLException;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by clezio on 18/03/16.
@@ -59,12 +61,25 @@ public class Users extends BaseController{
     }
 
     public static void delete(Long id){
-        User user = User.findById(id);
-        if(user == null){
-            error(HTTP_UNPROCESSABLE_ENTITY, getMessage("entity.invalid", getMessage("models.user")));
+        try {
+            User user = User.findById(id);
+            if (user == null) {
+                error(HTTP_UNPROCESSABLE_ENTITY, getMessage("entity.invalid", getMessage("models.user")));
+            }
+            user.delete();
+            renderJSON(user);
+        }catch(Exception e){
+            Throwable ex = e;
+            while(ex.getCause() != null){
+                ex = ex.getCause();
+            }
+            if(ex instanceof SQLException){
+                if(((SQLException) ex).getErrorCode() == 1451){
+                    error(HTTP_UNPROCESSABLE_ENTITY, getMessage("entity.constraint"));
+                }
+            }
+            error(HTTP_UNPROCESSABLE_ENTITY, ex.getMessage());
         }
-        user.delete();
-        renderJSON(user);
     }
 
     public static void get(Long id){
@@ -73,5 +88,10 @@ public class Users extends BaseController{
             error(HTTP_UNPROCESSABLE_ENTITY, getMessage("entity.invalid", getMessage("models.user")));
         }
         renderJSON(user);
+    }
+
+    public static void all(){
+        List<User> users = User.find("order by occupation.name, name").fetch();
+        renderJSON(users);
     }
 }
