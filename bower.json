@@ -1,5 +1,5 @@
 {
-  "name": "Grunt Estudo",
+  "name": "grunt-estudo",
   "authors": [
     "Clézio Santos <cleziolima@gmail.com>"
   ],
@@ -24,5 +24,8 @@
     "angular-loading-spinner": "^0.0.3",
     "bootbox.js": "bootbox#^4.4.0",
     "angular-flash-alert": "^2.2.7"
+  },
+  "resolutions": {
+    "angular-spinner": "0.8.1"
   }
 }
