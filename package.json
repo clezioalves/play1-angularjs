@@ -1,0 +1,34 @@
+{
+  "name": "play-angular",
+  "version": "1.0.0",
+  "description": "-A simple example with Play Framework 1.4.1 and AngularJS.<br/> -Continuous integration with heroku (http://play1-angularjs.herokuapp.com/)",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Clézio Santos",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:clezioalves/play1-angularjs.git"
+  },
+  "keywords": [
+    "Play",
+    "Framework",
+    "AngularJS"
+  ],
+  "bugs": {
+    "url": "https://github.com/clezioalves/play1-angularjs/issues"
+  },
+  "directories": {
+    "test": "test"
+  }
+}

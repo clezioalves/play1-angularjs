@@ -17,3 +17,5 @@ server.pid
 *.ipr
 *.iws
 test/
+public/javascripts/bower_components
+node_modules/

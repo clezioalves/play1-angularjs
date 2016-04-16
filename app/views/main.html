@@ -4,48 +4,30 @@
     <head>
         <title>#{get 'title' /}</title>
         <meta charset="${_response_encoding}">
-        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
-        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/bootstrap-3.3.5-dist/css/bootstrap.css'}">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/dist/play-angular.min.css'}">
+        <link rel="stylesheet" media="screen" href="@{'/public/javascripts/bower_components/bootstrap/dist/css/bootstrap.css'}">
 
         #{get 'moreStyles' /}
         <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
     </head>
     <body>
-        <script src="@{'/public/javascripts/jquery-2.2.2.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/stylesheets/bootstrap-3.3.5-dist/js/bootstrap.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/angular-1.4.7/angular.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/angular-1.4.7/angular-route.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/app/modules/app.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/app/config/routesConfig.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/app/config/genericConfig.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/angular-1.4.7/angular-resource.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/angular-1.4.7/i18n/angular-locale_pt-br.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/angular-1.4.7/angular-cookies.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/spin.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/angular-loading/angular-spinner.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/angular-loading/angular-loading-spinner.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-		<script src="@{'/public/javascripts/bootbox.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/angular-flash/angular-flash.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/bower_components/jquery/dist/jquery.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/bower_components/bootstrap/dist/js/bootstrap.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/bower_components/angular/angular.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/bower_components/angular-route/angular-route.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/bower_components/angular-resource/angular-resource.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/bower_components/angular-cookies/angular-cookies.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/bower_components/spin.js/spin.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/bower_components/angular-spinner/angular-spinner.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/bower_components/angular-loading-spinner/angular-loading-spinner.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+		<script src="@{'/public/javascripts/bower_components/bootbox.js/bootbox.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/bower_components/angular-flash-alert/dist/angular-flash.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
 
-        <script src="@{'/public/javascripts/app/services/flashService.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/app/services/usersFactory.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/app/services/occupationsFactory.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/app/services/projectsFactory.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/app/services/translateService.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/app/controllers/mainCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/app/controllers/userListCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/app/controllers/userAddCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/app/controllers/userEditCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/app/controllers/userDetailCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/app/controllers/projectListCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/app/controllers/projectAddCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/app/controllers/projectEditCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/app/controllers/projectDetailCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/app/controllers/occupationListCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/app/controllers/occupationAddCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/app/controllers/occupationEditCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/app/controllers/occupationDetailCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/app/filters/translateFilter.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/dist/modules.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/dist/configs.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/dist/services.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/dist/controllers.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/dist/filters.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
 
         #{get 'moreScripts' /}
         <div class="container-fluid" ng-controller="mainCtrl">
@@ -53,7 +35,6 @@
                 <img src="@{'/public/images/en.png'}" style="{{language != 'en' ? 'opacity:0.4' : ''}};cursor: pointer" title="English" height="42" width="42" ng-click="setLanguage('en')">
                 <img src="@{'/public/images/pt-br.png'}" style="{{language != 'pt-br' ? 'opacity:0.4' : ''}};cursor: pointer" title="Português" height="42" width="42" ng-click="setLanguage('pt-br')">
             </div>
-            <pdf-download url="http://localhost:9000/renderPDF" filename="my-awesome.pdf"></pdf-download>
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
