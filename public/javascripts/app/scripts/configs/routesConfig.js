@@ -1,11 +1,7 @@
+"use strict";
 angular.module("appModule").config(['$routeProvider', '$httpProvider',function($routeProvider, $httpProvider){
 
     $routeProvider.when("/",{
-        //templateUrl: '/public/views-angular/home.html'
-        redirectTo: '/projects'
-    });
-
-    $routeProvider.otherwise({
         redirectTo: '/projects'
     });
 
@@ -107,5 +103,9 @@ angular.module("appModule").config(['$routeProvider', '$httpProvider',function($
                  return ProjectFactory.get({ id: $route.current.params.id })
             }]
         }
+    });
+
+    $routeProvider.otherwise({
+        redirectTo: '/projects'
     });
 }]);
