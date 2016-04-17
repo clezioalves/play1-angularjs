@@ -23,11 +23,35 @@
 		<script src="@{'/public/javascripts/bower_components/bootbox.js/bootbox.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/bower_components/angular-flash-alert/dist/angular-flash.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
 
-        <script src="@{'/public/javascripts/dist/modules.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <!--script src="@{'/public/javascripts/dist/modules.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/dist/configs.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/dist/services.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/dist/controllers.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/dist/filters.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/dist/filters.min.js'}" type="text/javascript" charset="${_response_encoding}"></script-->
+
+        <script src="@{'/public/javascripts/app/scripts/modules/app.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/scripts/configs/routesConfig.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/scripts/configs/genericConfig.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/scripts/services/flashService.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/scripts/services/usersFactory.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/scripts/services/occupationsFactory.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/scripts/services/projectsFactory.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/scripts/services/translateService.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/scripts/controllers/mainCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/scripts/controllers/userListCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/scripts/controllers/userAddCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/scripts/controllers/userEditCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/scripts/controllers/userDetailCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/scripts/controllers/projectListCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/scripts/controllers/projectAddCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/scripts/controllers/projectEditCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/scripts/controllers/projectDetailCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/scripts/controllers/occupationListCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/scripts/controllers/occupationAddCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/scripts/controllers/occupationEditCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/scripts/controllers/occupationDetailCtrl.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/app/scripts/filters/translateFilter.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+
 
         #{get 'moreScripts' /}
         <div class="container-fluid" ng-controller="mainCtrl">
