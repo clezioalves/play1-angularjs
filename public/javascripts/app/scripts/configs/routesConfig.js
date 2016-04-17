@@ -1,4 +1,3 @@
-"use strict";
 angular.module("appModule").config(['$routeProvider', '$httpProvider',function($routeProvider, $httpProvider){
 
     $routeProvider.when("/",{

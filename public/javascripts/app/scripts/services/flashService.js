@@ -1,4 +1,3 @@
-"use strict";
 angular.module("appModule").factory("flash",
     ['$rootScope', '$timeout', 'genericConfig',
     function($rootScope, $timeout, genericConfig) {

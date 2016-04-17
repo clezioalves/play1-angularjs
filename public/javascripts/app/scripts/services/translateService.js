@@ -1,4 +1,3 @@
-"use strict";
 angular.module("appModule").service("translateService",
     ['$cookies', function($cookies) {
     var _translations = {

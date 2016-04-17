@@ -1,4 +1,3 @@
-"use strict";
 angular.module("appModule").controller("projectListCtrl",
     ['$scope', 'ProjectFactory', '$controller', 'translateService', '$routeParams',
     function($scope, ProjectFactory, $controller, translateService, $routeParams){

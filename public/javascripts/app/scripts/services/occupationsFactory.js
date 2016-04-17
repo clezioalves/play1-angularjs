@@ -1,4 +1,3 @@
-"use strict";
 angular.module("appModule").factory('OccupationFactory',
     ['$resource', function($resource) {
       return $resource('/occupations/:id',{ id: '@_id' },{

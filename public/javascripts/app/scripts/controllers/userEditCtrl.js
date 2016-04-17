@@ -1,4 +1,3 @@
-"use strict";
 angular.module("appModule").controller("userEditCtrl",
     ['$scope', 'UserFactory', '$location', 'user', 'occupations', '$controller', 'flash', '$cookies', 'translateService',
     function($scope, UserFactory, $location, user, occupations, $controller, flash, $cookies, translateService){

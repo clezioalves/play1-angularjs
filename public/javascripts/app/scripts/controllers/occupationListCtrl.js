@@ -1,4 +1,3 @@
-"use strict";
 angular.module("appModule").controller("occupationListCtrl",
     ['$scope', 'OccupationFactory', '$controller', 'translateService', '$routeParams',
     function($scope, OccupationFactory, $controller, translateService, $routeParams){

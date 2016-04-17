@@ -1,4 +1,3 @@
-"use strict";
 angular.module("appModule").controller("projectAddCtrl",
     ['$scope', 'ProjectFactory', '$controller', '$location', 'flash', 'translateService', 'participants',
     function($scope, ProjectFactory, $controller, $location, flash, translateService, participants){

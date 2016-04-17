@@ -1,4 +1,3 @@
-"use strict";
 angular.module("appModule").controller("occupationAddCtrl",
     ['$scope', 'OccupationFactory', '$controller', '$location', 'flash', 'translateService',
     function($scope, OccupationFactory, $controller, $location, flash, translateService){

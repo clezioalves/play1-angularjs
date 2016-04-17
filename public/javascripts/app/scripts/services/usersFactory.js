@@ -1,4 +1,3 @@
-"use strict";
 angular.module("appModule").factory('UserFactory',
     ['$resource', function($resource) {
       return $resource('/users/:id',{ id: '@_id' },{

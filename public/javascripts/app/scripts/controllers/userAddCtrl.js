@@ -1,4 +1,3 @@
-"use strict";
 angular.module("appModule").controller("userAddCtrl",
     ['$scope', 'UserFactory', '$controller', '$location', 'flash', 'translateService', 'occupations',
     function($scope, UserFactory, $controller, $location, flash, translateService, occupations){

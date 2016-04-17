@@ -1,4 +1,3 @@
-"use strict";
 angular.module("appModule").factory('ProjectFactory',
     ['$resource', function($resource) {
       return $resource('/projects/:id',{ id: '@_id' },{

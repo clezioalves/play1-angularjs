@@ -1,4 +1,3 @@
-"use strict";
 angular.module("appModule").controller("mainCtrl",
     ['$scope', '$timeout', 'flash', '$http', '$cookies', 'translateService', 'genericConfig', '$location', 'Flash',
     function($scope, $timeout, flash, $http, $cookies, translateService, genericConfig, $location, Flash){

@@ -19,3 +19,4 @@ server.pid
 test/
 public/javascripts/bower_components
 node_modules/
+precompiled

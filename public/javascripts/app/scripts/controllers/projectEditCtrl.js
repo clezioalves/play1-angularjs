@@ -1,4 +1,3 @@
-"use strict";
 angular.module("appModule").controller("projectEditCtrl",
     ['$scope', 'ProjectFactory', '$location', 'participants', '$controller', 'flash', '$cookies', 'translateService', 'project',
     function($scope, ProjectFactory, $location, participants, $controller, flash, $cookies, translateService, project){

@@ -1,4 +1,3 @@
-"use strict";
 angular.module("appModule").controller("userListCtrl",
     ['$scope', 'UserFactory', '$controller', 'translateService', '$routeParams',
     function($scope, UserFactory, $controller, translateService, $routeParams){

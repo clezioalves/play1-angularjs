@@ -1,4 +1,3 @@
-"use strict";
 angular.module("appModule").controller("occupationEditCtrl",
     ['$scope', 'OccupationFactory', '$location', 'occupation', '$controller', 'flash', '$cookies', 'translateService',
     function($scope, OccupationFactory, $location, occupation, $controller, flash, $cookies, translateService){
