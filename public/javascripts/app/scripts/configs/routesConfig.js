@@ -1,9 +1,5 @@
 angular.module("appModule").config(['$routeProvider', '$httpProvider',function($routeProvider, $httpProvider){
 
-    $routeProvider.when("/",{
-        redirectTo: '/projects'
-    });
-
     //User
     $routeProvider.when("/users",{
         templateUrl: '/public/javascripts/app/views/users/userList.html',
