@@ -14,9 +14,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "postinstall": "bower install",
-    "heroku-prebuild": "echo inicio.",
-    "heroku-postbuild": "echo fim."
+    "postinstall": "bower install"
   },
   "author": "Clézio Santos",
   "license": "ISC",
