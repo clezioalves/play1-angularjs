@@ -4,6 +4,9 @@
   "description": "-A simple example with Play Framework 1.4.1 and AngularJS.<br/> -Continuous integration with heroku (http://play1-angularjs.herokuapp.com/)",
   "main": "Gruntfile.js",
   "dependencies": {
+    "bower": "^1.7.9"
+  },
+  "devDependencies": {
     "bower": "^1.7.9",
     "grunt": "^1.0.1",
     "grunt-contrib-concat": "^1.0.0",
@@ -12,7 +15,6 @@
     "grunt-contrib-watch": "^1.0.0",
     "tmp": "0.0.28"
   },
-  "devDependencies": {},
   "scripts": {
     "postinstall": "bower install"
   },
