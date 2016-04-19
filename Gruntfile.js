@@ -1,4 +1,6 @@
 /*global module:false*/
+var fs = require('fs');
+
 module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
@@ -31,6 +33,23 @@ module.exports = function(grunt) {
         src: ['<%= dirs.srcApp %>/controllers/*.js'],
         dest: '<%= dirs.destApp %>/controllers.min.js'	 
       },
+      vendor: {
+              files: {
+                '<%= dirs.destApp %>/vendor.js': getFiles([
+                    'jquery.min.js',
+                    'bootstrap.min.js',
+                    'angular.min.js',
+                    'angular-route.min.js',
+                    'angular-resource.min.js',
+                    'angular-cookies.min.js',
+                    'spin.js',
+                    'angular-spinner.min.js',
+                    'angular-loading-spinner.js',
+                    'bootbox.js',
+                    'angular-flash.min.js'
+                    ],'public/javascripts/bower_components')
+              }
+            },
       //css
       css: {
         src: ['<%= dirs.srcCss %>/main.css','<%= dirs.srcCss %>/bootstrap-3.3.5-dist/css/bootstrap.min.css'],
@@ -74,5 +93,27 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('default', ['concat','uglify','cssmin','watch']);
-
 };
+
+function getFiles (dependencies, dir){
+    var files = fs.readdirSync(dir);
+    for (var i in files){
+        var name = dir + '/' + files[i];
+        if (fs.statSync(name).isDirectory()){
+            if(endsWith(name,'demo')){
+                return dependencies;
+            }
+            getFiles(dependencies, name/*, files_*/);
+        } else {
+            var indexOf = dependencies.indexOf(files[i]);
+            if (indexOf != -1){
+                dependencies[indexOf] = name;
+            }
+        }
+    }
+    return dependencies;
+}
+
+function endsWith(str, suffix) {
+    return str.indexOf(suffix, str.length - suffix.length) !== -1;
+}
