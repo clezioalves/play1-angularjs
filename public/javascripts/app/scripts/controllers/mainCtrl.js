@@ -37,13 +37,15 @@ angular.module("appModule").controller("mainCtrl",
     };
 
     $scope.setLanguage = function(language){
-        $http({
-          method: 'GET',
-          url: '/language/'+language
-        }).then(function successCallback(response) {
-            $scope.language = language;
-            location.reload();
-        });
+        if($scope.language != language){
+            $http({
+              method: 'GET',
+              url: '/language/'+language
+            }).then(function successCallback(response) {
+                $scope.language = language;
+                location.reload();
+            });
+        }
     };
 
     if(flash.getMessages()){

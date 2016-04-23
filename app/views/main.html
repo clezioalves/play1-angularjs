@@ -24,8 +24,8 @@
         #{get 'moreScripts' /}
         <div class="container-fluid" ng-controller="mainCtrl">
             <div style="text-align: right">
-                <img src="@{'/public/images/en.png'}" style="{{language != 'en' ? 'opacity:0.4' : ''}};cursor: pointer" title="English" height="42" width="42" ng-click="setLanguage('en')">
-                <img src="@{'/public/images/pt-br.png'}" style="{{language != 'pt-br' ? 'opacity:0.4' : ''}};cursor: pointer" title="Português" height="42" width="42" ng-click="setLanguage('pt-br')">
+                <img src="@{'/public/images/en.png'}" style="{{language != 'en' ? 'opacity:0.4;cursor: pointer' : ''}}" title="English" height="42" width="42" ng-click="setLanguage('en')">
+                <img src="@{'/public/images/pt-br.png'}" style="{{language != 'pt-br' ? 'opacity:0.4;cursor: pointer' : ''}}" title="Português" height="42" width="42" ng-click="setLanguage('pt-br')">
             </div>
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
