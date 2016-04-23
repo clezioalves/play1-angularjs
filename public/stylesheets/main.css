@@ -1,13 +1,13 @@
-.ng-isolate-scope{
+.ng-alert{
     position: fixed;
     right: 13px;
 }
 
-.ng-isolate-scope ul{
+.ng-alert ul{
     padding: 7px;
 }
 
-.ng-isolate-scope li{
+.ng-alert li{
     list-style: none;
 }
 

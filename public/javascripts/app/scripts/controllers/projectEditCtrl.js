@@ -15,4 +15,17 @@ angular.module("appModule").controller("projectEditCtrl",
         );
     };
     $scope.labelOperation = translateService.translate('generic.Edit',[translateService.translate('projects.Project')])
+    $scope.settingsMultiSelect = {
+        scrollableHeight: '200px',
+        scrollable: true,
+        displayProp: 'name',
+        idProp: 'id'
+    };
+
+    $scope.translateMultiSelect = {
+        checkAll:translateService.translate('generic.checkAll'),
+        uncheckAll:translateService.translate('generic.uncheckAll'),
+        buttonDefaultText:translateService.translate('generic.select'),
+        dynamicButtonTextSuffix:translateService.translate('generic.selected')
+    };
 }]);

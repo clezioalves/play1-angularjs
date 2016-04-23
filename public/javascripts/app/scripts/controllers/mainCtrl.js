@@ -14,7 +14,7 @@ angular.module("appModule").controller("mainCtrl",
         listHtml += "</ul>";
         Flash.create('success',
             '<strong> '+translateService.translate('generic.Done')+'! </strong>' +
-            listHtml, genericConfig.timeSuccess);
+            listHtml, genericConfig.timeSuccess, {class: 'ng-alert'});
     };
 
     //Message error
@@ -33,7 +33,7 @@ angular.module("appModule").controller("mainCtrl",
 
         Flash.create('danger',
             '<strong> '+translateService.translate('generic.Oops')+'! </strong>' +
-            listHtml, genericConfig.timeError);
+            listHtml, genericConfig.timeError, {class: 'ng-alert'});
     };
 
     $scope.setLanguage = function(language){

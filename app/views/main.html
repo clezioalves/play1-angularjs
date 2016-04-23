@@ -12,7 +12,9 @@
     </head>
     <body>
         <script src="@{'/public/javascripts/dist/vendor.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-
+        <script>
+         _.contains = _.includes;
+        </script>
         <script src="@{'/public/javascripts/dist/modules.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/dist/configs.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         <script src="@{'/public/javascripts/dist/services.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>

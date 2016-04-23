@@ -3,5 +3,7 @@ angular.module("appModule",
     'ngRoute',
     'ngLoadingSpinner',
     'ngCookies',
-    'ngFlash'
+    'ngFlash',
+    'ui.bootstrap',
+    'angularjs-dropdown-multiselect'
     ]);

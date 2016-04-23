@@ -20,11 +20,14 @@
             </textarea>
         </div>
         <div class="form-group">
-            <label>{{'projects.Participants' | translate}}</label>
-            <select size="10" multiple="true" class="form-control" ng-model="project.participants"
-                    ng-options="u.name group by u.occupation.name for u in participants track by u.id">
-            </select>
+            <div ng-dropdown-multiselect
+                 translation-texts="translateMultiSelect"
+                 options="participants"
+                 selected-model="project.participants"
+                 extra-settings="settingsMultiSelect"
+                 ></div>
         </div>
+
         <button class="btn btn-primary">
             <span class="glyphicon glyphicon glyphicon-ok"></span>
             {{'generic.Save' | translate}}

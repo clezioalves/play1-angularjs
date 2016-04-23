@@ -46,7 +46,10 @@ module.exports = function(grunt) {
                     'angular-spinner.min.js',
                     'angular-loading-spinner.js',
                     'bootbox.js',
-                    'angular-flash.min.js'
+                    'angular-flash.min.js',
+                    'lodash.min.js',
+                    'angularjs-dropdown-multiselect.min.js',
+                    'ui-bootstrap-tpls.min.js'
                     ],'public/javascripts/bower_components')
               }
             },
