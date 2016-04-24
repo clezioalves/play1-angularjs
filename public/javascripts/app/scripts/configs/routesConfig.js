@@ -3,10 +3,12 @@ angular.module("appModule").config(['$routeProvider', '$httpProvider',function($
     //User
     $routeProvider.when("/users",{
         templateUrl: '/public/javascripts/app/views/users/userList.html',
-        controller: "userListCtrl"
+        controller: "userListCtrl",
+        controllerAs: 'ctrl'
     }).when("/users/form",{
         templateUrl: '/public/javascripts/app/views/users/userForm.html',
         controller: "userAddCtrl",
+        controllerAs: 'ctrl',
         resolve: {
             occupations: ['OccupationFactory',function(OccupationFactory) {
                  return OccupationFactory.all()
@@ -15,6 +17,7 @@ angular.module("appModule").config(['$routeProvider', '$httpProvider',function($
     }).when("/users/edit/:id",{
         templateUrl: '/public/javascripts/app/views/users/userForm.html',
         controller: "userEditCtrl",
+        controllerAs: 'ctrl',
         resolve: {
             user: ['$route', 'UserFactory',function($route, UserFactory) {
                  return UserFactory.get({ id: $route.current.params.id })
@@ -26,6 +29,7 @@ angular.module("appModule").config(['$routeProvider', '$httpProvider',function($
     }).when("/users/detail/:id",{
         templateUrl: '/public/javascripts/app/views/users/userDetail.html',
         controller: "userDetailCtrl",
+        controllerAs: 'ctrl',
         resolve: {
             user: ['$route', 'UserFactory',function($route, UserFactory) {
                  return UserFactory.get({ id: $route.current.params.id })
@@ -35,13 +39,16 @@ angular.module("appModule").config(['$routeProvider', '$httpProvider',function($
     //Occupation
     .when("/occupations",{
         templateUrl: '/public/javascripts/app/views/occupations/occupationList.html',
-        controller: "occupationListCtrl"
+        controller: "occupationListCtrl",
+        controllerAs: 'ctrl'
     }).when("/occupations/form",{
         templateUrl: '/public/javascripts/app/views/occupations/occupationForm.html',
-        controller: "occupationAddCtrl"
+        controller: "occupationAddCtrl",
+        controllerAs: 'ctrl'
     }).when("/occupations/edit/:id",{
         templateUrl: '/public/javascripts/app/views/occupations/occupationForm.html',
         controller: "occupationEditCtrl",
+        controllerAs: 'ctrl',
         resolve: {
             occupation: ['$route', 'OccupationFactory',function($route, OccupationFactory) {
                  return OccupationFactory.get({ id: $route.current.params.id })
@@ -50,6 +57,7 @@ angular.module("appModule").config(['$routeProvider', '$httpProvider',function($
     }).when("/occupations/detail/:id",{
         templateUrl: '/public/javascripts/app/views/occupations/occupationDetail.html',
         controller: "occupationDetailCtrl",
+        controllerAs: 'ctrl',
         resolve: {
             occupation: ['$route', 'OccupationFactory',function($route, OccupationFactory) {
                  return OccupationFactory.get({ id: $route.current.params.id })
@@ -59,10 +67,12 @@ angular.module("appModule").config(['$routeProvider', '$httpProvider',function($
     //Project
     .when("/projects",{
         templateUrl: '/public/javascripts/app/views/projects/projectList.html',
-        controller: "projectListCtrl"
+        controller: "projectListCtrl",
+        controllerAs: 'ctrl'
     }).when("/projects/form",{
         templateUrl: '/public/javascripts/app/views/projects/projectForm.html',
         controller: "projectAddCtrl",
+        controllerAs: 'ctrl',
         resolve: {
             participants: ['UserFactory',function(UserFactory) {
                  return UserFactory.all()
@@ -71,6 +81,7 @@ angular.module("appModule").config(['$routeProvider', '$httpProvider',function($
     }).when("/projects/edit/:id",{
         templateUrl: '/public/javascripts/app/views/projects/projectForm.html',
         controller: "projectEditCtrl",
+        controllerAs: 'ctrl',
         resolve: {
             project: ['$route','ProjectFactory',function($route, ProjectFactory) {
                  return ProjectFactory.get({ id: $route.current.params.id })
@@ -82,6 +93,7 @@ angular.module("appModule").config(['$routeProvider', '$httpProvider',function($
     }).when("/projects/detail/:id",{
         templateUrl: '/public/javascripts/app/views/projects/projectDetail.html',
         controller: "projectDetailCtrl",
+        controllerAs: 'ctrl',
         resolve: {
             project: ['$route','ProjectFactory',function($route, ProjectFactory) {
                  return ProjectFactory.get({ id: $route.current.params.id })

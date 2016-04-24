@@ -33,6 +33,10 @@ module.exports = function(grunt) {
         src: ['<%= dirs.srcApp %>/controllers/*.js'],
         dest: '<%= dirs.destApp %>/controllers.min.js'	 
       },
+      directives: {
+        src: ['<%= dirs.srcApp %>/directives/*.js'],
+        dest: '<%= dirs.destApp %>/directives.min.js'
+      },
       vendor: {
               files: {
                 '<%= dirs.destApp %>/vendor.js': getFiles([

@@ -8,16 +8,16 @@
 </fieldset>
 
 <div class="row">
-    <form name="form" ng-submit="saveUser(user)">
-        <input type="hidden" ng-model="user.id" >
+    <form name="form" ng-submit="ctrl.saveUser(ctrl.user)">
+        <input type="hidden" ng-model="ctrl.user.id" >
         <div class="form-group">
             <label>{{'users.Name' | translate}}</label>
-            <input type="text" class="form-control" ng-model="user.name" placeholder="{{'users.Name' | translate}}">
+            <input type="text" class="form-control" ng-model="ctrl.user.name" placeholder="{{'users.Name' | translate}}">
         </div>
         <div class="form-group">
             <label>{{'occupations.Occupation' | translate}}</label>
-            <select class="form-control" ng-model="user.occupation.id" ng-init="user.occupation.id"
-                    ng-options="o.id as o.name for o in occupations">
+            <select class="form-control" ng-model="ctrl.user.occupation.id" ng-init="ctrl.user.occupation.id"
+                    ng-options="o.id as o.name for o in ctrl.occupations">
                 <option value="">-- {{'generic.select' | translate}} --</option>
             </select>
         </div>

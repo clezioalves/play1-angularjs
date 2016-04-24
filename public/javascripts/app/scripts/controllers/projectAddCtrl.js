@@ -1,31 +1,32 @@
 angular.module("appModule").controller("projectAddCtrl",
-    ['$scope', 'ProjectFactory', '$controller', '$location', 'flash', 'translateService', 'participants',
-    function($scope, ProjectFactory, $controller, $location, flash, translateService, participants){
-    angular.extend(this, $controller('mainCtrl', {$scope: $scope}));
-    $scope.participants = participants;
-    $scope.saveProject = function(project){
+    ['$scope','ProjectFactory','$controller','$location','flash','translateService','participants','utilService',
+    function($scope,ProjectFactory,$controller,$location,flash,translateService,participants,utilService){
+    var me = this;
+    angular.extend(me, $controller('mainCtrl', {$scope: $scope}));
+    me.participants = participants;
+    me.saveProject = function(project){
         ProjectFactory.save(project, function(){
                 flash.setMessagesSuccess(translateService.translate('generic.saved'));
                 $location.path("/projects");
             },
             function(response) {
-                $scope.showMessageError(response.data);
+                utilService.showMessageError(response.data);
             }
         );
     };
 
-    $scope.labelOperation = translateService.translate('generic.New',[translateService.translate('projects.Project')]);
-    $scope.project = new Object();
-    $scope.project.participants = [];
+    me.labelOperation = translateService.translate('generic.New',[translateService.translate('projects.Project')]);
+    me.project = new Object();
+    me.project.participants = [];
 
-    $scope.settingsMultiSelect = {
+    me.settingsMultiSelect = {
         scrollableHeight: '200px',
         scrollable: true,
         displayProp: 'name',
         idProp: 'id'
     };
 
-    $scope.translateMultiSelect = {
+    me.translateMultiSelect = {
         checkAll:translateService.translate('generic.checkAll'),
         uncheckAll:translateService.translate('generic.uncheckAll'),
         buttonDefaultText:translateService.translate('generic.select'),

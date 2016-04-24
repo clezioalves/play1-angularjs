@@ -8,11 +8,11 @@
 </fieldset>
 
 <div class="row">
-    <form name="form" ng-submit="saveOccupation(occupation)">
-        <input type="hidden" ng-model="occupation.id" >
+    <form name="form" ng-submit="ctrl.saveOccupation(ctrl.occupation)">
+        <input type="hidden" ng-model="ctrl.occupation.id" >
         <div class="form-group">
             <label>{{'occupations.Name' | translate}}</label>
-            <input type="text" class="form-control" ng-model="occupation.name" placeholder="{{'occupations.Name' | translate}}">
+            <input type="text" class="form-control" ng-model="ctrl.occupation.name" placeholder="{{'occupations.Name' | translate}}">
         </div>
         <button class="btn btn-primary">
             <span class="glyphicon glyphicon glyphicon-ok"></span>

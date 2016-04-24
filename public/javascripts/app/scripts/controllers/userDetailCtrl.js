@@ -1,4 +1,5 @@
 angular.module("appModule").controller("userDetailCtrl",
     ['$scope', 'user',function($scope, user){
-    $scope.user =  user;
+    var me = this;
+    me.user =  user;
 }]);

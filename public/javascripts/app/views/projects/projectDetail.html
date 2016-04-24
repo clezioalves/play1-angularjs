@@ -10,15 +10,15 @@
     <table>
         <tr>
             <td class="tdDetailLeft">#</td>
-            <td>{{project.id}}</td>
+            <td>{{ctrl.project.id}}</td>
         </tr>
         <tr>
             <td class="tdDetailLeft">{{'projects.Name' | translate}}</td>
-            <td>{{project.name}}</td>
+            <td>{{ctrl.project.name}}</td>
         </tr>
         <tr>
             <td class="tdDetailLeft">{{'projects.Description' | translate}}</td>
-            <td>{{project.description}}</td>
+            <td>{{ctrl.project.description}}</td>
         </tr>
         <tr>
             <td class="tdDetailLeft">{{'projects.Participants' | translate}}</td>
@@ -32,7 +32,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="user in project.participants">
+                        <tr ng-repeat="user in ctrl.project.participants">
                             <td>{{user.name}}</td>
                             <td>{{user.occupation.name}}</td>
                         </tr>
@@ -43,11 +43,11 @@
         </tr>
         <tr>
             <td class="tdDetailLeft">{{'generic.Created' | translate}}</td>
-            <td>{{project.created | date:('generic.date.format' | translate)}}</td>
+            <td>{{ctrl.project.created | date:('generic.date.format' | translate)}}</td>
         </tr>
         <tr>
             <td class="tdDetailLeft">{{'generic.Modified' | translate}}</td>
-            <td>{{project.modified | date:('generic.date.format' | translate)}}</td>
+            <td>{{ctrl.project.modified | date:('generic.date.format' | translate)}}</td>
         </tr>
     </table>
 </div>

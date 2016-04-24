@@ -10,19 +10,19 @@
     <table>
         <tr>
             <td class="tdDetailLeft">#</td>
-            <td>{{occupation.id}}</td>
+            <td>{{ctrl.occupation.id}}</td>
         </tr>
         <tr>
             <td class="tdDetailLeft">{{'occupations.Name' | translate}}</td>
-            <td>{{occupation.name}}</td>
+            <td>{{ctrl.occupation.name}}</td>
         </tr>
         <tr>
             <td class="tdDetailLeft">{{'generic.Created' | translate}}</td>
-            <td>{{occupation.created | date:('generic.date.format' | translate)}}</td>
+            <td>{{ctrl.occupation.created | date:('generic.date.format' | translate)}}</td>
         </tr>
         <tr>
             <td class="tdDetailLeft">{{'generic.Modified' | translate}}</td>
-            <td>{{occupation.modified | date:('generic.date.format' | translate)}}</td>
+            <td>{{ctrl.occupation.modified | date:('generic.date.format' | translate)}}</td>
         </tr>
     </table>
 </div>

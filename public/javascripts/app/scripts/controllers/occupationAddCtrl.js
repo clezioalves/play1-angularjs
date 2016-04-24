@@ -1,17 +1,17 @@
 angular.module("appModule").controller("occupationAddCtrl",
     ['$scope', 'OccupationFactory', '$controller', '$location', 'flash', 'translateService',
     function($scope, OccupationFactory, $controller, $location, flash, translateService){
-    angular.extend(this, $controller('mainCtrl', {$scope: $scope}));
-    $scope.saveOccupation = function(occupation){
+    var me = this;
+    angular.extend(me, $controller('mainCtrl', {$scope: $scope}));
+    me.saveOccupation = function(occupation){
         OccupationFactory.save(occupation, function(){
                 flash.setMessagesSuccess(translateService.translate('generic.saved'));
                 $location.path("/occupations");
             },
             function(response) {
-                $scope.showMessageError(response.data);
+                utilService.showMessageError(response.data);
             }
         );
     };
-
-    $scope.labelOperation = translateService.translate('generic.New',[translateService.translate('occupations.Occupation')])
+    me.labelOperation = translateService.translate('generic.New',[translateService.translate('occupations.Occupation')])
 }]);

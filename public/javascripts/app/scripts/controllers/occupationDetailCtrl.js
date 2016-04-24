@@ -1,4 +1,5 @@
 angular.module("appModule").controller("occupationDetailCtrl",
     ['$scope', 'occupation',function($scope, occupation){
-    $scope.occupation =  occupation;
+    var me = this;
+    me.occupation =  occupation;
 }]);

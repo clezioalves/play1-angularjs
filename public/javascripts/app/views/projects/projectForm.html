@@ -8,23 +8,23 @@
 </fieldset>
 
 <div class="row">
-    <form name="form" ng-submit="saveProject(project)">
-        <input type="hidden" ng-model="project.id" >
+    <form name="form" ng-submit="ctrl.saveProject(ctrl.project)">
+        <input type="hidden" ng-model="ctrl.project.id" >
         <div class="form-group">
             <label>{{'projects.Name' | translate}}</label>
-            <input type="text" class="form-control" ng-model="project.name" placeholder="{{'projects.Name' | translate}}">
+            <input type="text" class="form-control" ng-model="ctrl.project.name" placeholder="{{'projects.Name' | translate}}">
         </div>
         <div class="form-group">
             <label>{{'projects.Description' | translate}}</label>
-            <textarea type="text" class="form-control" ng-model="project.description" placeholder="{{'projects.Description' | translate}}" >
+            <textarea type="text" class="form-control" ng-model="ctrl.project.description" placeholder="{{'projects.Description' | translate}}" >
             </textarea>
         </div>
         <div class="form-group">
             <div ng-dropdown-multiselect
-                 translation-texts="translateMultiSelect"
-                 options="participants"
-                 selected-model="project.participants"
-                 extra-settings="settingsMultiSelect"
+                 translation-texts="ctrl.translateMultiSelect"
+                 options="ctrl.participants"
+                 selected-model="ctrl.project.participants"
+                 extra-settings="ctrl.settingsMultiSelect"
                  ></div>
         </div>
 

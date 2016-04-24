@@ -10,23 +10,23 @@
     <table>
         <tr>
             <td class="tdDetailLeft">#</td>
-            <td>{{user.id}}</td>
+            <td>{{ctrl.user.id}}</td>
         </tr>
         <tr>
             <td class="tdDetailLeft">{{'users.Name' | translate}}</td>
-            <td>{{user.name}}</td>
+            <td>{{ctrl.user.name}}</td>
         </tr>
         <tr>
             <td class="tdDetailLeft">{{'occupations.Occupation' | translate}}</td>
-            <td>{{user.occupation.name}}</td>
+            <td>{{ctrl.user.occupation.name}}</td>
         </tr>
         <tr>
             <td class="tdDetailLeft">{{'generic.Created' | translate}}</td>
-            <td>{{user.created | date:('generic.date.format' | translate)}}</td>
+            <td>{{ctrl.user.created | date:('generic.date.format' | translate)}}</td>
         </tr>
         <tr>
             <td class="tdDetailLeft">{{'generic.Modified' | translate}}</td>
-            <td>{{user.modified | date:('generic.date.format' | translate)}}</td>
+            <td>{{ctrl.user.modified | date:('generic.date.format' | translate)}}</td>
         </tr>
     </table>
 </div>

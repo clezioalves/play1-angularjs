@@ -1,37 +1,37 @@
 angular.module("appModule").controller("userListCtrl",
-    ['$scope', 'UserFactory', '$controller', 'translateService', '$routeParams',
-    function($scope, UserFactory, $controller, translateService, $routeParams){
-    angular.extend(this, $controller('mainCtrl', {$scope: $scope}));
-
-    $scope.listUser = function(page){
+    ['$scope', 'UserFactory', '$controller', 'translateService', '$routeParams','utilService',
+    function($scope, UserFactory, $controller, translateService, $routeParams, utilService){
+    var me = this;
+    angular.extend(me, $controller('mainCtrl', {$scope: $scope}));
+    me.paginate = new Object();
+    me.listUser = function(page){
         UserFactory.query(
             {page: page},
             function(data) {
-                $scope.listPaginated = data.list;
-                $scope.hasNextPage = data.hasNextPage;
-                $scope.pageCount = data.pageCount;
-                $scope.currentPage = data.currentPage;
+                me.paginate.listPaginated = data.list;
+                me.paginate.hasNextPage = data.hasNextPage;
+                me.paginate.pageCount = data.pageCount;
+                me.paginate.currentPage = data.currentPage;
             },
             function(response) {
-                $scope.showMessageError(response.data);
+                utilService.showMessageError(response.data);
             }
         );
     };
 
     //Remove User
-    $scope.removeUser = function(user){
-        $scope.confirmPopup(translateService.translate('generic.deleteConfirmation', [user.name]),
+    me.removeUser = function(user){
+        utilService.confirmPopup(translateService.translate('generic.deleteConfirmation', [user.name]),
             function(confirmed) {
                 if(confirmed){
                 UserFactory.remove({id: user.id}, function(){
-                    $scope.listUser($routeParams.page);
-                    $scope.showMessageSuccess(translateService.translate('generic.deleted'));
+                    me.listUser($routeParams.page);
+                    utilService.showMessageSuccess(translateService.translate('generic.deleted'));
                 },function(response){
-                    $scope.showMessageError(response.data);
+                    utilService.showMessageError(response.data);
                 });}
             }
         );
     }
-
-    $scope.listUser($routeParams.page);
+    me.listUser($routeParams.page);
 }]);

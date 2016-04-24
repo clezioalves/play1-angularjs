@@ -15,7 +15,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="occupation in listPaginated">
+            <tr ng-repeat="occupation in ctrl.paginate.listPaginated">
                 <td>{{occupation.id}}</td>
                 <td><a href="#occupations/detail/{{occupation.id}}">{{occupation.name}}</a></td>
                 <td>
@@ -23,7 +23,7 @@
                         <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                         {{'generic.Edit' | translate}}
                     </a>
-                    <a class="btn btn-danger" ng-click="removeOccupation(occupation);">
+                    <a class="btn btn-danger" ng-click="ctrl.removeOccupation(occupation);">
                         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                         {{'generic.Delete' | translate}}
                     </a>
@@ -31,7 +31,7 @@
             </tr>
             </tbody>
         </table>
-        <div ng-include src="'/public/javascripts/app/views/footerPaginate.html'"></div>
+        <pagination paginate="ctrl.paginate"></pagination>
     </div>
     <!-- /.table-responsive -->
 </div>
