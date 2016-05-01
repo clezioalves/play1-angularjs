@@ -1,6 +1,6 @@
 angular.module("appModule").controller("occupationEditCtrl",
-    ['$scope', 'OccupationFactory', '$location', 'occupation', '$controller', 'flash', 'translateService',
-    function($scope, OccupationFactory, $location, occupation, $controller, flash, translateService){
+    ['$scope', 'OccupationFactory', '$location', 'occupation', '$controller', 'flash', 'translateService','utilService',
+    function($scope, OccupationFactory, $location, occupation, $controller, flash, translateService,utilService){
     var me = this;
     angular.extend(me, $controller('mainCtrl', {$scope: $scope, flash: flash}));
     me.occupation = occupation;

@@ -1,6 +1,6 @@
 angular.module("appModule").controller("userAddCtrl",
-    ['$scope', 'UserFactory', '$controller', '$location', 'flash', 'translateService', 'occupations',
-    function($scope, UserFactory, $controller, $location, flash, translateService, occupations){
+    ['$scope', 'UserFactory', '$controller', '$location', 'flash', 'translateService', 'occupations','utilService',
+    function($scope, UserFactory, $controller, $location, flash, translateService, occupations,utilService){
     var me = this;
     angular.extend(me, $controller('mainCtrl', {$scope: $scope}));
     me.occupations = occupations;

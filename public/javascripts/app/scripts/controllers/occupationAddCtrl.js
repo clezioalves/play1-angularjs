@@ -1,6 +1,6 @@
 angular.module("appModule").controller("occupationAddCtrl",
-    ['$scope', 'OccupationFactory', '$controller', '$location', 'flash', 'translateService',
-    function($scope, OccupationFactory, $controller, $location, flash, translateService){
+    ['$scope', 'OccupationFactory', '$controller', '$location', 'flash', 'translateService','utilService',
+    function($scope, OccupationFactory, $controller, $location, flash, translateService,utilService){
     var me = this;
     angular.extend(me, $controller('mainCtrl', {$scope: $scope}));
     me.saveOccupation = function(occupation){

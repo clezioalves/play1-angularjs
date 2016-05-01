@@ -1,6 +1,6 @@
 angular.module("appModule").controller("projectEditCtrl",
-    ['$scope', 'ProjectFactory', '$location', 'participants', '$controller', 'flash', '$cookies', 'translateService', 'project',
-    function($scope, ProjectFactory, $location, participants, $controller, flash, $cookies, translateService, project){
+    ['$scope', 'ProjectFactory', '$location', 'participants', '$controller', 'flash', '$cookies', 'translateService', 'project','utilService',
+    function($scope, ProjectFactory, $location, participants, $controller, flash, $cookies, translateService, project,utilService){
     var me = this;
     angular.extend(me, $controller('mainCtrl', {$scope: $scope}));
     me.project = project;
