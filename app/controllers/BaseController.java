@@ -25,7 +25,7 @@ public class BaseController extends Controller {
 
     public static final String MY_FAVORITE_LANGUAGE = "myFavoriteLanguage";
 
-    private static final java.lang.String TIME_FAVORITE_LANGUAGE_COOKIE = "30d";
+    private static final String TIME_FAVORITE_LANGUAGE_COOKIE = "30d";
 
     public static void language(String language) {
         response.setCookie(MY_FAVORITE_LANGUAGE, language, TIME_FAVORITE_LANGUAGE_COOKIE);
@@ -38,6 +38,7 @@ public class BaseController extends Controller {
         if(cookie == null){
             response.setCookie(MY_FAVORITE_LANGUAGE, "pt-br", TIME_FAVORITE_LANGUAGE_COOKIE);
         }
+        renderArgs.put("contextPath", request.path);
     }
 
     public static void index() {

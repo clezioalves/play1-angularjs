@@ -1,12 +1,11 @@
-angular.module("appModule").config(['$routeProvider', '$httpProvider',function($routeProvider, $httpProvider){
-
+angular.module("appModule").config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider){
     //User
     $routeProvider.when("/users",{
-        templateUrl: '/public/javascripts/app/views/users/userList.html',
+        templateUrl: _contextPath + 'public/javascripts/app/views/users/userList.html',
         controller: "userListCtrl",
         controllerAs: 'ctrl'
     }).when("/users/form",{
-        templateUrl: '/public/javascripts/app/views/users/userForm.html',
+        templateUrl: _contextPath + 'public/javascripts/app/views/users/userForm.html',
         controller: "userAddCtrl",
         controllerAs: 'ctrl',
         resolve: {
@@ -15,7 +14,7 @@ angular.module("appModule").config(['$routeProvider', '$httpProvider',function($
             }]
         }
     }).when("/users/edit/:id",{
-        templateUrl: '/public/javascripts/app/views/users/userForm.html',
+        templateUrl: _contextPath + 'public/javascripts/app/views/users/userForm.html',
         controller: "userEditCtrl",
         controllerAs: 'ctrl',
         resolve: {
@@ -27,7 +26,7 @@ angular.module("appModule").config(['$routeProvider', '$httpProvider',function($
             }]
         }
     }).when("/users/detail/:id",{
-        templateUrl: '/public/javascripts/app/views/users/userDetail.html',
+        templateUrl: _contextPath + 'public/javascripts/app/views/users/userDetail.html',
         controller: "userDetailCtrl",
         controllerAs: 'ctrl',
         resolve: {
@@ -38,15 +37,15 @@ angular.module("appModule").config(['$routeProvider', '$httpProvider',function($
     })
     //Occupation
     .when("/occupations",{
-        templateUrl: '/public/javascripts/app/views/occupations/occupationList.html',
+        templateUrl: _contextPath + 'public/javascripts/app/views/occupations/occupationList.html',
         controller: "occupationListCtrl",
         controllerAs: 'ctrl'
     }).when("/occupations/form",{
-        templateUrl: '/public/javascripts/app/views/occupations/occupationForm.html',
+        templateUrl: _contextPath + 'public/javascripts/app/views/occupations/occupationForm.html',
         controller: "occupationAddCtrl",
         controllerAs: 'ctrl'
     }).when("/occupations/edit/:id",{
-        templateUrl: '/public/javascripts/app/views/occupations/occupationForm.html',
+        templateUrl: _contextPath + 'public/javascripts/app/views/occupations/occupationForm.html',
         controller: "occupationEditCtrl",
         controllerAs: 'ctrl',
         resolve: {
@@ -55,7 +54,7 @@ angular.module("appModule").config(['$routeProvider', '$httpProvider',function($
             }]
         }
     }).when("/occupations/detail/:id",{
-        templateUrl: '/public/javascripts/app/views/occupations/occupationDetail.html',
+        templateUrl: _contextPath + 'public/javascripts/app/views/occupations/occupationDetail.html',
         controller: "occupationDetailCtrl",
         controllerAs: 'ctrl',
         resolve: {
@@ -66,11 +65,11 @@ angular.module("appModule").config(['$routeProvider', '$httpProvider',function($
     })
     //Project
     .when("/projects",{
-        templateUrl: '/public/javascripts/app/views/projects/projectList.html',
+        templateUrl: _contextPath + 'public/javascripts/app/views/projects/projectList.html',
         controller: "projectListCtrl",
         controllerAs: 'ctrl'
     }).when("/projects/form",{
-        templateUrl: '/public/javascripts/app/views/projects/projectForm.html',
+        templateUrl: _contextPath + 'public/javascripts/app/views/projects/projectForm.html',
         controller: "projectAddCtrl",
         controllerAs: 'ctrl',
         resolve: {
@@ -79,7 +78,7 @@ angular.module("appModule").config(['$routeProvider', '$httpProvider',function($
             }]
         }
     }).when("/projects/edit/:id",{
-        templateUrl: '/public/javascripts/app/views/projects/projectForm.html',
+        templateUrl: _contextPath + 'public/javascripts/app/views/projects/projectForm.html',
         controller: "projectEditCtrl",
         controllerAs: 'ctrl',
         resolve: {
@@ -91,7 +90,7 @@ angular.module("appModule").config(['$routeProvider', '$httpProvider',function($
             }]
         }
     }).when("/projects/detail/:id",{
-        templateUrl: '/public/javascripts/app/views/projects/projectDetail.html',
+        templateUrl: _contextPath + 'public/javascripts/app/views/projects/projectDetail.html',
         controller: "projectDetailCtrl",
         controllerAs: 'ctrl',
         resolve: {

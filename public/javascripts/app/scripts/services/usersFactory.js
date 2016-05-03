@@ -1,15 +1,15 @@
 angular.module("appModule").factory('UserFactory',
     ['$resource', function($resource) {
-      return $resource('/users/:id',{ id: '@_id' },{
+      return $resource(_contextPath + 'users/:id',{ id: '@_id' },{
         update: {
             method: 'PUT' // this method issues a PUT request
         },
         query: {
-            url:'/users/list/:page',
+            url:_contextPath + 'users/list/:page',
             isArray: false
         },
         all: {
-            url:'/users/all',
+            url:_contextPath + 'users/all',
             isArray: true
         }
     });

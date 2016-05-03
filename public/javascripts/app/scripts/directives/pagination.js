@@ -1,7 +1,7 @@
 angular.module("appModule").directive("pagination",['$location',function($location){
     return {
         restrict: 'E',
-        templateUrl: '/public/javascripts/app/views/footerPaginate.html',
+        templateUrl: _contextPath + 'public/javascripts/app/views/footerPaginate.html',
         scope: {
             paginate: '='
         },

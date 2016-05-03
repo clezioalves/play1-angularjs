@@ -1,15 +1,15 @@
 angular.module("appModule").factory('OccupationFactory',
     ['$resource', function($resource) {
-      return $resource('/occupations/:id',{ id: '@_id' },{
+      return $resource(_contextPath + 'occupations/:id',{ id: '@_id' },{
         update: {
             method: 'PUT' // this method issues a PUT request
         },
         query: {
-            url:'/occupations/list/:page',
+            url:_contextPath + 'occupations/list/:page',
             isArray: false
         },
         all: {
-            url:'/occupations/all',
+            url:_contextPath + 'occupations/all',
             isArray: true
         }
     });
